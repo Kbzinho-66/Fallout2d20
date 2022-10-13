@@ -1,0 +1,28 @@
+.navbar {
+    background-color: #FEF265;
+}
+
+.navbar a {
+    font-size: 1.5em;
+    font-family: Overseer, monospace;
+}
+
+.navbar .nav-link {
+    color: #040B16;
+}
+
+.navbar .nav-link:hover {
+    color: #1F3A5A;
+}
+
+.navbar-brand {
+    color: #040B16;
+}
+
+body {
+    background: #325886;
+}
+
+h1 {
+    font-family: Overseer, monospace;
+}
