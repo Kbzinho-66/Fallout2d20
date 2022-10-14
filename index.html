@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
@@ -7,34 +8,44 @@
   <link rel="stylesheet" href="style.css">
   <title>Fallout 2d20</title>
 </head>
+
 <body>
 
-<!--TODO(Organizar melhor a navbar)-->
-<nav id="navBar" class="navbar navbar-light fixed-top py-0">
-  <div class="container-fluid">
-    <a href="#" class="navbar-brand">Fallout 2d20</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks"
-            aria-label="Mostrar navegação">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navLinks">
-      <div class="navbar-nav">
-        <a href="#" class="nav-link">Criação de Personagem</a>
-        <a href="#" class="nav-link">Meus Personagens</a>
+  <nav id="navBar" class="navbar navbar-light py-0">
+    <!-- TODO(Precisa de jQuery pra mandar trocar a posição da barra) -->
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand">Fallout 2d20</a>
+
+      <!-- ms-auto e me-auto aqui centralizam essa div -->
+      <div class="navbar-text ms-auto me-auto" id="character-name">Nome do personagem</div>
+
+      <div class="navbar-text mx-3" id="username">Usuário</div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks"
+        aria-label="Mostrar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navLinks">
+        <div class="navbar-nav">
+          <a href="#" class="nav-link">Criação de Personagem</a>
+          <a href="#" class="nav-link">Meus Personagens</a>
+          <a href="#" class="nav-link">Logout</a>
+        </div>
       </div>
     </div>
-  </div>
 
-</nav>
+  </nav>
 
-<main>
+  <main>
 
-</main>
+  </main>
 
-<footer>
+  <footer>
 
-</footer>
+  </footer>
 
-<script src="bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="bootstrap/js/bootstrap.bundle.js"></script>
 </body>
+
 </html>

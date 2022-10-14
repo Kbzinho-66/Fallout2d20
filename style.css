@@ -1,28 +1,41 @@
-.navbar {
-    background-color: #FEF265;
-}
-
-.navbar a {
-    font-size: 1.5em;
-    font-family: Overseer, monospace;
-}
-
-.navbar .nav-link {
-    color: #040B16;
-}
-
-.navbar .nav-link:hover {
-    color: #1F3A5A;
-}
-
-.navbar-brand {
-    color: #040B16;
-}
-
 body {
     background: #325886;
 }
 
 h1 {
     font-family: Overseer, monospace;
+}
+
+.navbar {
+    background-color: #FEF265;
+    font-family: Overseer, monospace;
+}
+
+.navbar .nav-link,
+.navbar-text {
+    font-size: 1.5em;
+    padding: 0;
+}
+
+.navbar-brand {
+    font-size: 2em;
+}
+
+#character-name {
+    text-align: center;
+    vertical-align: auto;
+
+    /* Deixar num tamanho adequado */
+    flex-grow: 3;
+    max-width: 20rem;
+    max-height: 2.5rem;
+
+    /* Hackzinho pra ficar no formato de "pill" */
+    border-radius: 500px;
+    border: 1px solid #0A1933;
+}
+
+#username {
+    text-align: center;
+    font-size: 1.2em;
 }
