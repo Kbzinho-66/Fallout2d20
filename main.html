@@ -38,35 +38,135 @@
   </nav>
 
   <main class="container-fluid">
-    <div class="row m-2">
-      <div class="col-3 secao">Origem</div>
-      <div class="col-1 secao">Nível</div>
-      <div class="col-5 secao">Experiência</div>
-      <div class="col-3 secao">Pontos de Ação</div>
+
+    <div class="row g-3 my-1">
+      <div class="col-3">
+        <div class="text-field">Iniciado da Irmandade</div>
+      </div>
+      <div class="col-1">
+        <div class="text-field">Nível 2</div>
+      </div>
+      <div class="col-5">
+        <!-- TODO O 100 aqui precisa ser um input de número. O 300 precisa vir de acordo com o nível do cara. -->
+        <div class="text-field">Experiência: 100 / 300</div>
+      </div>
+      <div class="col-3">
+        <!-- TODO O 1 precisa ser um input de número. -->
+        <div class="text-field">Pontos de Ação: 1 / 6</div>
+      </div>
     </div>
-    <div class="row m-2">
-      <div class="col-4 secao">
-        <div class="row">
-          <div class="col-12 secao">Atributos Principais</div>
-        </div>
-        <div class="row">
-          <div class="col-12 secao">Atributos Secundários</div>
+
+    <div class="row g-3 my-1">
+      <div class="col-2">
+        <!-- TODO Deixar essa tabela mais bonita -->
+        <table class="table-region">
+          <tr>
+            <th>Força</th>
+            <td>6</td>
+          </tr>
+          <tr>
+            <th>Percepção</th>
+            <td>6</td>
+          </tr>
+          <tr>
+            <th>Resistência</th>
+            <td>6</td>
+          </tr>
+          <tr>
+            <th>Carisma</th>
+            <td>6</td>
+          </tr>
+          <tr>
+            <th>Inteligência</th>
+            <td>6</td>
+          </tr>
+          <tr>
+            <th>Agilidade</th>
+            <td>6</td>
+          </tr>
+          <tr>
+            <th>Sorte</th>
+            <td>6</td>
+          </tr>
+        </table>
+
+      </div>
+      <div class="col-2">
+        <div class="secao">
+          <!-- TODO Deixar essa tabela mais bonita -->
+          <table class="table-region">
+            <tr>
+              <!-- TODO Dar um destaque maior pra essa parte -->
+              <th>Pontos de Vida</th>
+              <td>12 / 30</td>
+            </tr>
+            <tr>
+              <!-- TODO Dar um destaque maior pra essa parte -->
+              <th>Defesa</th>
+              <td>12</td>
+            </tr>
+            <tr>
+              <th>Capacidade de Carga</th>
+              <td>30 Kgs</td>
+            </tr>
+            <tr>
+              <th>Iniciativa</th>
+              <td>12</td>
+            </tr>
+            <tr>
+              <th>Dano Corpo-a-Corpo</th>
+              <td>+1</td>
+            </tr>
+            <tr>
+              <!-- TODO Deixar isso menos horrível -->
+              <table class="table-region">
+                <tr>
+                  <th colspan="4">Resistências</th>
+                </tr>
+                <tr>
+                  <th>Física</th>
+                  <th>Energia</th>
+                  <th>Veneno</th>
+                  <th>Radiação</th>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>0</td>
+                </tr>
+              </table>
+            </tr>
+          </table>
         </div>
       </div>
-      <div class="col-5 secao">Habilidades</div>
-      <div class="col-3 secao">Imagem do Personagem</div>
-    </div>
-    <div class="row m-2">
-      <div class="col-4 secao">Armas</div>
-      <div class="col-5 secao">Outros Equipamentos</div>
-      <div class="col-3 secao">Estado dos Membros</div>
+      <div class="col-5">
+        <div class="secao">Habilidades</div>
+      </div>
+      <div class="col-3">
+        <div class="secao">Imagem do Personagem</div>
+      </div>
     </div>
 
-    <footer>
-      <!-- Ainda não sei o que colocar aqui -->
-    </footer>
+    <div class="row g-3 my-1">
+      <div class="col-4">
+        <div class="secao">Armas</div>
+      </div>
+      <div class="col-5">
+        <div class="secao">Outros Equipamentos</div>
+      </div>
+      <div class="col-3">
+        <div class="secao">Estado dos Membros</div>
+      </div>
+    </div>
 
-    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+  </main>
+
+  <footer>
+    <!-- Ainda não sei o que colocar aqui -->
+  </footer>
+
+  <script src="bootstrap/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>

@@ -40,6 +40,26 @@ h1 {
 }
 
 .secao {
+    background-color: #FCE8A4;
+    border-radius: 5px;
     text-align: center;
-    border: 1px solid #FCE8A4;
+}
+
+.text-field {
+    background-color: #FCE8A4;
+    border-radius: 5px;
+    font-family: 'Sierra Madre', monospace;
+    font-size: 1.3rem;
+    letter-spacing: 0.05rem;
+    text-align: center;
+}
+
+/* Por enquanto é igual, mudar depois */
+.table-region {
+    border-radius: 5px;
+    background-color: #FCE8A4;
+    font-family: 'Sierra Madre', monospace;
+    font-size: 1.3rem;
+    letter-spacing: 0.05rem;
+    text-align: center;
 }
