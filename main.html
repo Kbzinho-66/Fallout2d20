@@ -41,23 +41,54 @@
 
     <div class="row g-3 my-1">
       <div class="col-2">
-        <div class="text-field">Brotherhood Initiate</div>
+        <div class="text-field py-1">Brotherhood Initiate</div>
       </div>
       <div class="col-1">
-        <div class="text-field">Level 2</div>
+        <div class="text-field py-1">Level 2</div>
       </div>
+
       <div class="col-5">
-        <!-- TODO O 100 aqui precisa ser um input de número. O 300 precisa vir de acordo com o nível do cara. -->
-        <div class="text-field">Experience: 100 / 300</div>
+        <div class="secao">
+          <div class="row justify-content-center py-1">
+            <div class="col-2 input-label">Experience</div>
+            <div class="col-2">
+              <!-- TODO Melhorar isso com jQuery / JS -->
+              <input class="number-input" type="numeric" name="current-xp" id="current-xp" min="0" step="1">
+            </div>
+            <div class="col-1">/</div>
+            <div class="col-2 max-number" id="total-xp">300</div>
+          </div>
+        </div>
       </div>
+
       <div class="col-2">
-        <!-- TODO O 1 precisa ser um input de número. -->
-        <div class="text-field">Action Points: 1 / 6</div>
+        <div class="secao">
+          <div class="row justify-content-center py-1">
+            <div class="col-5 input-label">Action Points</div>
+            <div class="col-2">
+              <!-- TODO Melhorar isso com jQuery / JS -->
+              <input class="number-input digit-input" type="number" name="current-ap" id="current-ap" min="0" step="1"
+                max="6">
+            </div>
+            <div class="col-1">/</div>
+            <div class="col-2 max-number" id="total-xp">6</div>
+          </div>
+        </div>
       </div>
+
       <div class="col-2">
-        <!-- TODO O 1 precisa ser um input de número. -->
-        <!-- TODO O 6 é o mesmo número da Sorte -->
-        <div class="text-field">Luck Points: 1 / 6</div>
+        <div class="secao">
+          <div class="row justify-content-center py-1">
+            <div class="col-4 input-label">Luck Points</div>
+            <div class="col-2">
+              <!-- TODO Melhorar isso com jQuery / JS -->
+              <input class="number-input digit-input" type="number" name="current-lp" id="current-lp" min="0" step="1"
+                max="6">
+            </div>
+            <div class="col-1">/</div>
+            <div class="col-2 max-number" id="total-xp">6</div>
+          </div>
+        </div>
       </div>
     </div>
 
