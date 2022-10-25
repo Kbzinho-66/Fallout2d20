@@ -63,3 +63,42 @@ h1 {
     letter-spacing: 0.05rem;
     text-align: center;
 }
+
+.special-header {
+    font-family: 'Sierra Madre', monospace;
+    font-size: 2.5rem;
+    border-radius: 90% 90% 0 0;
+}
+
+.special-stat {
+    font-family: 'Sierra Madre', monospace;
+    font-size: 1.5rem;
+}
+
+.str-attr {
+    background-color: #797D62;
+}
+
+.per-attr {
+    background-color: #9B9B7A;
+}
+
+.end-attr {
+    background-color: #D9AE94;
+}
+
+.cha-attr {
+    background-color: #F1DCA7;
+}
+
+.int-attr {
+    background-color: #FFCB69;
+}
+
+.agi-attr {
+    background-color: #D08C60;
+}
+
+.lck-attr {
+    background-color: #997B66;
+}
