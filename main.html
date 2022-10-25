@@ -244,11 +244,22 @@
       <div class="col-4">
         <div class="row g-3">
           <div class="col-12">
-            <div class="row secao mx-auto">
-              <div class="col-4">Health Points</div>
-              <div class="col-2">10 / 18</div>
-              <div class="col-3">Defense</div>
-              <div class="col-2">1</div>
+            <div class="secao">
+              <div class="row justify-content-center py-1">
+                <div class="col-3 input-label">Health Points</div>
+                <div class="col-2">
+                  <!-- TODO Melhorar isso com jQuery / JS -->
+                  <input class="number-input digit-input" type="number" name="current-hp" id="current-hp" min="0"
+                    step="1" max="18">
+                </div>
+                <div class="col-1">/</div>
+                <div class="col-2 max-number" id="total-hp">30</div>
+
+                <div class="col-1"> </div>
+
+                <div class="col-1 input-label">Defense</div>
+                <div class="col-2 max-number" id="defense">1</div>
+              </div>
             </div>
             <div class="row secao g-3 mx-auto my-1">
               <div class="row">
