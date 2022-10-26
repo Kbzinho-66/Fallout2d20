@@ -87,6 +87,7 @@ h1 {
 
 .number-input:focus {
     border-bottom: 2px solid rgb(33, 37, 41);
+    text-align: center;
 }
 
 .digit-input {
@@ -135,4 +136,9 @@ h1 {
 
 .lck-attr {
     background-color: #997B66;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 1.3rem;
 }

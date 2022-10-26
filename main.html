@@ -136,6 +136,9 @@
             um slider. Não precisaria obrigatoriamente ser um slider, poderia ser uma série de botões -->
             <!-- TODO Precisa de uma forma de marcar que uma habilidade é uma "Tag Skill" -->
             <tr>
+              <th colspan="4" class="section-title">Skills</th>
+            </tr>
+            <tr>
               <td> </td>
               <th>Athletics</th>
               <td>1</td>
@@ -244,13 +247,14 @@
       <div class="col-4">
         <div class="row g-3">
           <div class="col-12">
+
             <div class="secao">
               <div class="row justify-content-center py-1">
                 <div class="col-3 input-label">Health Points</div>
                 <div class="col-2">
                   <!-- TODO Melhorar isso com jQuery / JS -->
                   <input class="number-input digit-input" type="number" name="current-hp" id="current-hp" min="0"
-                    step="1" max="18">
+                    step="1" max="18" placeholder="18">
                 </div>
                 <div class="col-1">/</div>
                 <div class="col-2 max-number" id="total-hp">30</div>
@@ -261,21 +265,19 @@
                 <div class="col-2 max-number" id="defense">1</div>
               </div>
             </div>
+
             <div class="row secao g-3 mx-auto my-1">
               <div class="row">
-                <div class="col-12">Resistances</div>
+                <div class="col">Melee Damage</div>
+                <div class="col">Defense</div>
+                <div class="col">Initiative</div>
+                <div class="col">Poison Resistance</div>
               </div>
               <div class="row">
-                <div class="col-3">Physical</div>
-                <div class="col-3">Energy</div>
-                <div class="col-3">Poison</div>
-                <div class="col-3">Radiation</div>
-              </div>
-              <div class="row">
-                <div class="col-3">0</div>
-                <div class="col-3">0</div>
-                <div class="col-3">0</div>
-                <div class="col-3">0</div>
+                <div class="col-3 max-number">0</div>
+                <div class="col-3 max-number">1</div>
+                <div class="col-3 max-number">12</div>
+                <div class="col-3 max-number">0</div>
               </div>
             </div>
 
@@ -283,20 +285,109 @@
         </div>
 
         <div class="row g-3 mx-auto my-1">
-          <div class="col-12 secao">
-            <div class="row justify-content-center">
-              <div class="col-4">Head (1-2)</div>
+          <div class="secao">
+
+            <div class="row">
+              <div class="col-6 container">
+                <div class="row">
+                  <div class="col">Head (1-2)</div>
+                </div>
+                <div class="row">
+                  <div class="col">Phys. DR</div>
+                  <div class="col">Rad. DR</div>
+                  <div class="col">En. DR</div>
+                </div>
+                <div class="row">
+                  <div class="col">0</div>
+                  <div class="col">0</div>
+                  <div class="col">0</div>
+                </div>
+              </div>
             </div>
-            <div class="row justify-content-between">
-              <div class="col-4">Left Arm (9-11)</div>
-              <div class="col-4">Right Arm (12-14)</div>
+
+            <div class="row">
+              <div class="col-6 container">
+                <div class="row">
+                  <div class="col">Left Arm (9-11)</div>
+                </div>
+                <div class="row">
+                  <div class="col">Phys. DR</div>
+                  <div class="col">Rad. DR</div>
+                  <div class="col">En. DR</div>
+                </div>
+                <div class="row">
+                  <div class="col">0</div>
+                  <div class="col">0</div>
+                  <div class="col">0</div>
+                </div>
+              </div>
+
+              <div class="col-6 container">
+                <div class="row">
+                  <div class="col">Right Arm (12-14)</div>
+                </div>
+                <div class="row">
+                  <div class="col">Phys. DR</div>
+                  <div class="col">Rad. DR</div>
+                  <div class="col">En. DR</div>
+                </div>
+                <div class="row">
+                  <div class="col">0</div>
+                  <div class="col">0</div>
+                  <div class="col">0</div>
+                </div>
+              </div>
             </div>
-            <div class="row justify-content-center">
-              <div class="col-4">Torso (3-8)</div>
+
+            <div class="row">
+              <div class="col-6 container">
+                <div class="row">
+                  <div class="col">Torso (3-8)</div>
+                </div>
+                <div class="row">
+                  <div class="col">Phys. DR</div>
+                  <div class="col">Rad. DR</div>
+                  <div class="col">En. DR</div>
+                </div>
+                <div class="row">
+                  <div class="col">0</div>
+                  <div class="col">0</div>
+                  <div class="col">0</div>
+                </div>
+              </div>
             </div>
-            <div class="row justify-content-between">
-              <div class="col-4">Left Leg (15-17)</div>
-              <div class="col-4">Right Leg (18-20)</div>
+
+            <div class="row">
+              <div class="col-6 container">
+                <div class="row">
+                  <div class="col">Left Leg (15-17)</div>
+                </div>
+                <div class="row">
+                  <div class="col">Phys. DR</div>
+                  <div class="col">Rad. DR</div>
+                  <div class="col">En. DR</div>
+                </div>
+                <div class="row">
+                  <div class="col">0</div>
+                  <div class="col">0</div>
+                  <div class="col">0</div>
+                </div>
+              </div>
+              <div class="col-6 container">
+                <div class="row">
+                  <div class="col">Right Leg (18-20)</div>
+                </div>
+                <div class="row">
+                  <div class="col">Phys. DR</div>
+                  <div class="col">Rad. DR</div>
+                  <div class="col">En. DR</div>
+                </div>
+                <div class="row">
+                  <div class="col">0</div>
+                  <div class="col">0</div>
+                  <div class="col">0</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -345,6 +436,7 @@
           </table>
         </div>
       </div>
+
       <div class="col-4">
         <div class="secao">
           <table class="table-region">
@@ -371,6 +463,7 @@
           </table>
         </div>
       </div>
+
     </div>
 
   </main>
