@@ -142,3 +142,40 @@ h1 {
     font-weight: bold;
     font-size: 1.3rem;
 }
+
+.limb-table {
+    border: 1px solid #82A7D6;
+    border-radius: 5px;
+    width: fit-content;
+    background-color: #FEF5D7;
+}
+
+.limb-table-title {
+    font-weight: bold;
+    border-bottom: 1px solid #82A7D6;
+    background-color: #82A7D6;
+}
+
+.limb-table-name {
+    width: 4rem;
+}
+
+.limb-table-value {
+    width: 4rem;
+    font-family: Monofont, monospace;
+}
+
+.limb-table-name:nth-of-type(2),
+.limb-table-value:nth-of-type(2) {
+    width: 4rem;
+    border-left: 1px solid #82A7D6;
+    border-right: 1px solid #82A7D6;
+}
+
+#body-stats {
+    background-image: url(res/Body_Status.png);
+    background-attachment: scroll;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
