@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="fonts/stylesheet.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/ab1f6ee337.js" crossorigin="anonymous"></script>
   <title>Fallout 2d20</title>
 </head>
 
@@ -21,8 +22,8 @@
 
       <div class="navbar-text mx-3" id="username">Usuário</div>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks"
-        aria-label="Mostrar navegação">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-label
+        disabled="Mostrar navegação">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -95,8 +96,10 @@
     <div class="row g-3 my-1">
 
       <div class="col-3">
+
+        <!-- Atributos Principais -->
         <div class="row g-3">
-          <div class="col-12">
+          <div class="col">
             <div class="row mx-auto text-center">
               <div class="col special-header str-attr">S</div>
               <div class="col special-header per-attr">P</div>
@@ -107,15 +110,21 @@
               <div class="col special-header lck-attr">L</div>
             </div>
             <div class="row mx-auto text-center">
-              <div class="col special-stat str-attr">6</div>
-              <div class="col special-stat per-attr">6</div>
-              <div class="col special-stat end-attr">6</div>
-              <div class="col special-stat cha-attr">6</div>
-              <div class="col special-stat int-attr">6</div>
-              <div class="col special-stat agi-attr">6</div>
+              <div class="col special-stat str-attr">7</div>
+              <div class="col special-stat per-attr">8</div>
+              <div class="col special-stat end-attr">8</div>
+              <div class="col special-stat cha-attr">9</div>
+              <div class="col special-stat int-attr">5</div>
+              <div class="col special-stat agi-attr">7</div>
               <div class="col special-stat lck-attr">6</div>
             </div>
-            <div class="row mx-auto my-1 secao">
+          </div>
+        </div>
+
+        <!-- Perks -->
+        <div class="col">
+          <div class="row mx-auto text-center">
+            <div class="row mx-auto my-3 secao">
               <div class="row">
                 <div class="col-12">Perks</div>
               </div>
@@ -130,121 +139,222 @@
       </div>
 
       <div class="col-5">
-        <div class="secao">
-          <table class="table-region">
-            <!-- NOTE Não sei ainda se os valores vão ficar um número só... Acho que seria legal
-            um slider. Não precisaria obrigatoriamente ser um slider, poderia ser uma série de botões -->
-            <!-- TODO Precisa de uma forma de marcar que uma habilidade é uma "Tag Skill" -->
-            <tr>
+        <div class="">
+          <table class="table-region" id="skills-table">
+            <!-- TODO No lugar dos badges, colocar um select -->
+            <tr class="table-header">
               <th colspan="4" class="section-title">Skills</th>
             </tr>
             <tr>
-              <td> </td>
-              <th>Athletics</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+              </td>
+              <th class="skill-name">Athletics</th>
               <td>1</td>
-              <td>STR</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill str-attr">STR</span></td>
+              <td>7</td>
+              <td>=</td>
+              <td>8</td>
             </tr>
             <tr>
-              <td> </td>
-              <th>Barter</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+              </td>
+              <th class="skill-name">Barter</th>
               <td>2</td>
-              <td>CHA</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill text-dark cha-attr">CHA</span></td>
+              <td>9</td>
+              <td>=</td>
+              <td>11</td>
             </tr>
             <tr>
-              <td> </td>
-              <th>Big Guns</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+              </td>
+              <th class="skill-name">Big Guns</th>
               <td>3</td>
-              <td>END</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill text-dark end-attr">END</span></td>
+              <td>8</td>
+              <td>=</td>
+              <td>11</td>
             </tr>
             <tr>
-              <td>1</td>
-              <th>Energy Weapons</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+              </td>
+              <th class="skill-name">Energy Weapons</th>
               <td>4</td>
-              <td>PER</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill text-dark per-attr">PER</span></td>
+              <td>8</td>
+              <td>=</td>
+              <td>12</td>
             </tr>
             <tr>
-              <td> </td>
-              <th>Explosives</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+              </td>
+              <th class="skill-name">Explosives</th>
               <td>4</td>
-              <td>PER</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill text-dark per-attr">PER</span></td>
+              <td>8</td>
+              <td>=</td>
+              <td>12</td>
             </tr>
             <tr>
-              <td> </td>
-              <th>Lockpick</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+              </td>
+              <th class="skill-name">Lockpick</th>
               <td>2</td>
-              <td>PER</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill text-dark per-attr">PER</span></td>
+              <td>8</td>
+              <td>=</td>
+              <td>10</td>
             </tr>
             <tr>
-              <td>2</td>
-              <th>Medicine</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled checked>
+              </td>
+              <th class="skill-name">Medicine</th>
               <td>6</td>
-              <td>Intelligence</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill text-dark int-attr">INT</span></td>
+              <td>5</td>
+              <td>=</td>
+              <td>11</td>
             </tr>
             <tr>
-              <td> </td>
-              <th>Melee Weapons</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+              </td>
+              <th class="skill-name">Melee Weapons</th>
               <td>1</td>
-              <td>STR</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill str-attr">STR</span></td>
+              <td>7</td>
+              <td>=</td>
+              <td>8</td>
             </tr>
             <tr>
-              <td> </td>
-              <th>Pilot</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled checked>
+              </td>
+              <th class="skill-name">Pilot</th>
               <td>5</td>
-              <td>PER</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill text-dark per-attr">PER</span></td>
+              <td>8</td>
+              <td>=</td>
+              <td>13</td>
             </tr>
             <tr>
-              <td>3</td>
-              <th>Repair</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+              </td>
+              <th class="skill-name">Repair</th>
               <td>5</td>
-              <td>INT</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill text-dark int-attr">INT</span></td>
+              <td>5</td>
+              <td>=</td>
+              <td>10</td>
             </tr>
             <tr>
-              <td> </td>
-              <th>Science</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+              </td>
+              <th class="skill-name">Science</th>
               <td>3</td>
-              <td>INT</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill text-dark int-attr">INT</span></td>
+              <td>5</td>
+              <td>=</td>
+              <td>8</td>
             </tr>
             <tr>
-              <td> </td>
-              <th>Small Guns</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled checked>
+              </td>
+              <th class="skill-name">Small Guns</th>
               <td>6</td>
-              <td>AGI</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill text-dark agi-attr">AGI</span></td>
+              <td>7</td>
+              <td>=</td>
+              <td>13</td>
             </tr>
             <tr>
-              <td> </td>
-              <th>Sneak</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+              </td>
+              <th class="skill-name">Sneak</th>
               <td>5</td>
-              <td>AGI</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill text-dark agi-attr">AGI</span></td>
+              <td>7</td>
+              <td>=</td>
+              <td>12</td>
             </tr>
             <tr>
-              <td> </td>
-              <th>Speech</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+              </td>
+              <th class="skill-name">Speech</th>
               <td>4</td>
-              <td>CHA</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill text-dark cha-attr">CHA</span></td>
+              <td>9</td>
+              <td>=</td>
+              <td>13</td>
             </tr>
             <tr>
-              <td> </td>
-              <th>Survival</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+              </td>
+              <th class="skill-name">Survival</th>
               <td>3</td>
-              <td>END</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill text-dark end-attr">END</span></td>
+              <td>8</td>
+              <td>=</td>
+              <td>11</td>
             </tr>
             <tr>
-              <td> </td>
-              <th>Throwing</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+              </td>
+              <th class="skill-name">Throwing</th>
               <td>2</td>
-              <td>AGI</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill text-dark agi-attr">AGI</span></td>
+              <td>7</td>
+              <td>=</td>
+              <td>9</td>
             </tr>
             <tr>
-              <td> </td>
-              <th>Unarmed</th>
+              <td>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+              </td>
+              <th class="skill-name">Unarmed</th>
               <td>5</td>
-              <td>STR</td>
+              <td>+</td>
+              <td><span class="badge rounded-pill str-attr">STR</span></td>
+              <td>7</td>
+              <td>=</td>
+              <td>12</td>
             </tr>
           </table>
         </div>
       </div>
 
       <div class="col-4">
+        <!-- Atributos Secundários -->
         <div class="row g-3">
           <div class="col-12">
 
@@ -284,6 +394,7 @@
           </div>
         </div>
 
+        <!-- Estado dos Membros -->
         <div class="row g-3 mx-auto my-1">
           <div class="secao bg-image" id="body-stats">
             <div class="row my-3">

@@ -63,6 +63,7 @@ h1 {
     font-size: 1.3rem;
     letter-spacing: 0.05rem;
     text-align: center;
+    width: 100%;
 }
 
 .input-label {
@@ -178,4 +179,12 @@ h1 {
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: 50%;
+}
+
+.skill-name {
+    font-weight: normal;
+}
+
+.table-header {
+    border-bottom: 2px solid #325886;
 }
