@@ -143,16 +143,28 @@
           <table class="table-region" id="skills-table">
             <!-- TODO No lugar dos badges, colocar um select -->
             <tr class="table-header">
-              <th colspan="4" class="section-title">Skills</th>
+              <th colspan="8" class="section-title">Skills</th>
             </tr>
             <tr>
               <td>
-                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label="Tagged Skill" disabled>
               </td>
               <th class="skill-name">Athletics</th>
               <td>1</td>
               <td>+</td>
-              <td><span class="badge rounded-pill str-attr">STR</span></td>
+              <!-- <td><span class="badge rounded-pill str-attr">STR</span></td> -->
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline" aria-label="Seleção de atributo"
+                  name="bonus-attr" id="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" selected value="str">STR</option>
+                  <option class="attr-option" value="per">PER</option>
+                  <option class="attr-option" value="end">END</option>
+                  <option class="attr-option" value="cha">CHA</option>
+                  <option class="attr-option" value="int">INT</option>
+                  <option class="attr-option" value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
               <td>7</td>
               <td>=</td>
               <td>8</td>

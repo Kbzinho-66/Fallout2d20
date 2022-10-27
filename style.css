@@ -111,31 +111,38 @@ h1 {
     font-size: 1.5rem;
 }
 
-.str-attr {
+.str-attr,
+.attr-select[data-chosen='str'] {
     background-color: #797D62;
 }
 
-.per-attr {
+.per-attr,
+.attr-select[data-chosen='per'] {
     background-color: #9B9B7A;
 }
 
-.end-attr {
+.end-attr,
+.attr-select[data-chosen='end'] {
     background-color: #D9AE94;
 }
 
-.cha-attr {
+.cha-attr,
+.attr-select[data-chosen='cha'] {
     background-color: #F1DCA7;
 }
 
-.int-attr {
+.int-attr,
+.attr-select[data-chosen='int'] {
     background-color: #FFCB69;
 }
 
-.agi-attr {
+.agi-attr,
+.attr-select[data-chosen='agi'] {
     background-color: #D08C60;
 }
 
-.lck-attr {
+.lck-attr,
+.attr-select[data-chosen='lck'] {
     background-color: #997B66;
 }
 
@@ -187,4 +194,8 @@ h1 {
 
 .table-header {
     border-bottom: 2px solid #325886;
+}
+
+.attr-option {
+    font-weight: bold;
 }
