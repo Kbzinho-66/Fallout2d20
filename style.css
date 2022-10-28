@@ -111,38 +111,31 @@ h1 {
     font-size: 1.5rem;
 }
 
-.str-attr,
-.attr-select[data-chosen='str'] {
+.str-attr {
     background-color: #797D62;
 }
 
-.per-attr,
-.attr-select[data-chosen='per'] {
+.per-attr {
     background-color: #9B9B7A;
 }
 
-.end-attr,
-.attr-select[data-chosen='end'] {
+.end-attr {
     background-color: #D9AE94;
 }
 
-.cha-attr,
-.attr-select[data-chosen='cha'] {
+.cha-attr {
     background-color: #F1DCA7;
 }
 
-.int-attr,
-.attr-select[data-chosen='int'] {
+.int-attr {
     background-color: #FFCB69;
 }
 
-.agi-attr,
-.attr-select[data-chosen='agi'] {
+.agi-attr {
     background-color: #D08C60;
 }
 
-.lck-attr,
-.attr-select[data-chosen='lck'] {
+.lck-attr {
     background-color: #997B66;
 }
 
@@ -154,6 +147,7 @@ h1 {
 .limb-table {
     border: 1px solid #82A7D6;
     border-radius: 5px;
+    width: -moz-fit-content;
     width: fit-content;
     background-color: #FEF5D7;
 }
@@ -196,6 +190,39 @@ h1 {
     border-bottom: 2px solid #325886;
 }
 
-.attr-option {
+.attr-number {
+    font-family: Monofont, monospace;
+}
+
+.attr-select {
     font-weight: bold;
+}
+
+.attr-select[data-chosen='str'] {
+    background-color: #797D62;
+    color: white;
+}
+
+.attr-select[data-chosen='per'] {
+    background-color: #9B9B7A;
+}
+
+.attr-select[data-chosen='end'] {
+    background-color: #D9AE94;
+}
+
+.attr-select[data-chosen='cha'] {
+    background-color: #F1DCA7;
+}
+
+.attr-select[data-chosen='int'] {
+    background-color: #FFCB69;
+}
+
+.attr-select[data-chosen='agi'] {
+    background-color: #D08C60;
+}
+
+.attr-select[data-chosen='lck'] {
+    background-color: #997B66;
 }

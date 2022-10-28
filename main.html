@@ -150,12 +150,11 @@
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label="Tagged Skill" disabled>
               </td>
               <th class="skill-name">Athletics</th>
-              <td>1</td>
+              <td class="attr-number">1</td>
               <td>+</td>
-              <!-- <td><span class="badge rounded-pill str-attr">STR</span></td> -->
               <td>
-                <select class="form-select form-select-sm w-auto d-inline" aria-label="Seleção de atributo"
-                  name="bonus-attr" id="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                <select class="form-select form-select-sm w-auto d-inline str-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
                   <option class="attr-option" selected value="str">STR</option>
                   <option class="attr-option" value="per">PER</option>
                   <option class="attr-option" value="end">END</option>
@@ -165,201 +164,377 @@
                   <option class="attr-option" value="lck">LCK</option>
                 </select>
               </td>
-              <td>7</td>
+              <td class="attr-number">7</td>
               <td>=</td>
-              <td>8</td>
+              <td class="attr-number">8</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Barter</th>
-              <td>2</td>
+              <td class="attr-number">2</td>
               <td>+</td>
-              <td><span class="badge rounded-pill text-dark cha-attr">CHA</span></td>
-              <td>9</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline cha-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" value="str">STR</option>
+                  <option class="attr-option" value="per">PER</option>
+                  <option class="attr-option" value="end">END</option>
+                  <option class="attr-option" selected value="cha">CHA</option>
+                  <option class="attr-option" value="int">INT</option>
+                  <option class="attr-option" value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">9</td>
               <td>=</td>
-              <td>11</td>
+              <td class="attr-number">11</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Big Guns</th>
-              <td>3</td>
+              <td class="attr-number">3</td>
               <td>+</td>
-              <td><span class="badge rounded-pill text-dark end-attr">END</span></td>
-              <td>8</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline end-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" value="str">STR</option>
+                  <option class="attr-option" value="per">PER</option>
+                  <option class="attr-option" selected value="end">END</option>
+                  <option class="attr-option" value="cha">CHA</option>
+                  <option class="attr-option" value="int">INT</option>
+                  <option class="attr-option" value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">8</td>
               <td>=</td>
-              <td>11</td>
+              <td class="attr-number">11</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Energy Weapons</th>
-              <td>4</td>
+              <td class="attr-number">4</td>
               <td>+</td>
-              <td><span class="badge rounded-pill text-dark per-attr">PER</span></td>
-              <td>8</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline per-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" value="str">STR</option>
+                  <option class="attr-option" selected value="per">PER</option>
+                  <option class="attr-option" value="end">END</option>
+                  <option class="attr-option" value="cha">CHA</option>
+                  <option class="attr-option" value="int">INT</option>
+                  <option class="attr-option" value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">8</td>
               <td>=</td>
-              <td>12</td>
+              <td class="attr-number">12</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Explosives</th>
-              <td>4</td>
+              <td class="attr-number">4</td>
               <td>+</td>
-              <td><span class="badge rounded-pill text-dark per-attr">PER</span></td>
-              <td>8</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline per-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" value="str">STR</option>
+                  <option class="attr-option" selected value="per">PER</option>
+                  <option class="attr-option" value="end">END</option>
+                  <option class="attr-option" value="cha">CHA</option>
+                  <option class="attr-option" value="int">INT</option>
+                  <option class="attr-option" value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">8</td>
               <td>=</td>
-              <td>12</td>
+              <td class="attr-number">12</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Lockpick</th>
-              <td>2</td>
+              <td class="attr-number">2</td>
               <td>+</td>
-              <td><span class="badge rounded-pill text-dark per-attr">PER</span></td>
-              <td>8</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline per-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" value="str">STR</option>
+                  <option class="attr-option" selected value="per">PER</option>
+                  <option class="attr-option" value="end">END</option>
+                  <option class="attr-option" value="cha">CHA</option>
+                  <option class="attr-option" value="int">INT</option>
+                  <option class="attr-option" value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">8</td>
               <td>=</td>
-              <td>10</td>
+              <td class="attr-number">10</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled checked>
               </td>
               <th class="skill-name">Medicine</th>
-              <td>6</td>
+              <td class="attr-number">6</td>
               <td>+</td>
-              <td><span class="badge rounded-pill text-dark int-attr">INT</span></td>
-              <td>5</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline int-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" value="str">STR</option>
+                  <option class="attr-option" value="per">PER</option>
+                  <option class="attr-option" value="end">END</option>
+                  <option class="attr-option" value="cha">CHA</option>
+                  <option class="attr-option" selected value="int">INT</option>
+                  <option class="attr-option" value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">5</td>
               <td>=</td>
-              <td>11</td>
+              <td class="attr-number">11</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Melee Weapons</th>
-              <td>1</td>
+              <td class="attr-number">1</td>
               <td>+</td>
-              <td><span class="badge rounded-pill str-attr">STR</span></td>
-              <td>7</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline str-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" selected value="str">STR</option>
+                  <option class="attr-option" value="per">PER</option>
+                  <option class="attr-option" value="end">END</option>
+                  <option class="attr-option" value="cha">CHA</option>
+                  <option class="attr-option" value="int">INT</option>
+                  <option class="attr-option" value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">7</td>
               <td>=</td>
-              <td>8</td>
+              <td class="attr-number">8</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled checked>
               </td>
               <th class="skill-name">Pilot</th>
-              <td>5</td>
+              <td class="attr-number">5</td>
               <td>+</td>
-              <td><span class="badge rounded-pill text-dark per-attr">PER</span></td>
-              <td>8</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline per-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" value="str">STR</option>
+                  <option class="attr-option" selected value="per">PER</option>
+                  <option class="attr-option" value="end">END</option>
+                  <option class="attr-option" value="cha">CHA</option>
+                  <option class="attr-option" value="int">INT</option>
+                  <option class="attr-option" value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">8</td>
               <td>=</td>
-              <td>13</td>
+              <td class="attr-number">13</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Repair</th>
-              <td>5</td>
+              <td class="attr-number">5</td>
               <td>+</td>
-              <td><span class="badge rounded-pill text-dark int-attr">INT</span></td>
-              <td>5</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline int-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" value="str">STR</option>
+                  <option class="attr-option" value="per">PER</option>
+                  <option class="attr-option" value="end">END</option>
+                  <option class="attr-option" value="cha">CHA</option>
+                  <option class="attr-option" selected value="int">INT</option>
+                  <option class="attr-option" value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">5</td>
               <td>=</td>
-              <td>10</td>
+              <td class="attr-number">10</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Science</th>
-              <td>3</td>
+              <td class="attr-number">3</td>
               <td>+</td>
-              <td><span class="badge rounded-pill text-dark int-attr">INT</span></td>
-              <td>5</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline int-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" value="str">STR</option>
+                  <option class="attr-option" value="per">PER</option>
+                  <option class="attr-option" value="end">END</option>
+                  <option class="attr-option" value="cha">CHA</option>
+                  <option class="attr-option" selected value="int">INT</option>
+                  <option class="attr-option" value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">5</td>
               <td>=</td>
-              <td>8</td>
+              <td class="attr-number">8</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled checked>
               </td>
               <th class="skill-name">Small Guns</th>
-              <td>6</td>
+              <td class="attr-number">6</td>
               <td>+</td>
-              <td><span class="badge rounded-pill text-dark agi-attr">AGI</span></td>
-              <td>7</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline agi-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" value="str">STR</option>
+                  <option class="attr-option" value="per">PER</option>
+                  <option class="attr-option" value="end">END</option>
+                  <option class="attr-option" value="cha">CHA</option>
+                  <option class="attr-option" value="int">INT</option>
+                  <option class="attr-option" selected value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">7</td>
               <td>=</td>
-              <td>13</td>
+              <td class="attr-number">13</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Sneak</th>
-              <td>5</td>
+              <td class="attr-number">5</td>
               <td>+</td>
-              <td><span class="badge rounded-pill text-dark agi-attr">AGI</span></td>
-              <td>7</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline agi-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" value="str">STR</option>
+                  <option class="attr-option" value="per">PER</option>
+                  <option class="attr-option" value="end">END</option>
+                  <option class="attr-option" value="cha">CHA</option>
+                  <option class="attr-option" value="int">INT</option>
+                  <option class="attr-option" selected value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">7</td>
               <td>=</td>
-              <td>12</td>
+              <td class="attr-number">12</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Speech</th>
-              <td>4</td>
+              <td class="attr-number">4</td>
               <td>+</td>
-              <td><span class="badge rounded-pill text-dark cha-attr">CHA</span></td>
-              <td>9</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline cha-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" value="str">STR</option>
+                  <option class="attr-option" value="per">PER</option>
+                  <option class="attr-option" value="end">END</option>
+                  <option class="attr-option" selected value="cha">CHA</option>
+                  <option class="attr-option" value="int">INT</option>
+                  <option class="attr-option" value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">9</td>
               <td>=</td>
-              <td>13</td>
+              <td class="attr-number">13</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Survival</th>
-              <td>3</td>
+              <td class="attr-number">3</td>
               <td>+</td>
-              <td><span class="badge rounded-pill text-dark end-attr">END</span></td>
-              <td>8</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline end-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" value="str">STR</option>
+                  <option class="attr-option" value="per">PER</option>
+                  <option class="attr-option" selected value="end">END</option>
+                  <option class="attr-option" value="cha">CHA</option>
+                  <option class="attr-option" value="int">INT</option>
+                  <option class="attr-option" value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">8</td>
               <td>=</td>
-              <td>11</td>
+              <td class="attr-number">11</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Throwing</th>
-              <td>2</td>
+              <td class="attr-number">2</td>
               <td>+</td>
-              <td><span class="badge rounded-pill text-dark agi-attr">AGI</span></td>
-              <td>7</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline agi-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" value="str">STR</option>
+                  <option class="attr-option" value="per">PER</option>
+                  <option class="attr-option" value="end">END</option>
+                  <option class="attr-option" value="cha">CHA</option>
+                  <option class="attr-option" value="int">INT</option>
+                  <option class="attr-option" selected value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">7</td>
               <td>=</td>
-              <td>9</td>
+              <td class="attr-number">9</td>
             </tr>
             <tr>
               <td>
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Unarmed</th>
-              <td>5</td>
+              <td class="attr-number">5</td>
               <td>+</td>
-              <td><span class="badge rounded-pill str-attr">STR</span></td>
-              <td>7</td>
+              <td>
+                <select class="form-select form-select-sm w-auto d-inline str-attr attr-select"
+                  aria-label="Seleção de atributo" name="bonus-attr" onchange="this.dataset.chosen = this.value;">
+                  <option class="attr-option" selected value="str">STR</option>
+                  <option class="attr-option" value="per">PER</option>
+                  <option class="attr-option" value="end">END</option>
+                  <option class="attr-option" value="cha">CHA</option>
+                  <option class="attr-option" value="int">INT</option>
+                  <option class="attr-option" value="agi">AGI</option>
+                  <option class="attr-option" value="lck">LCK</option>
+                </select>
+              </td>
+              <td class="attr-number">7</td>
               <td>=</td>
-              <td>12</td>
+              <td class="attr-number">12</td>
             </tr>
           </table>
         </div>
