@@ -13,7 +13,7 @@
 <body>
 
   <nav id="navBar" class="navbar navbar-light py-0">
-    <!-- TODO(Precisa de jQuery pra mandar trocar a posição da barra) -->
+    <!-- TODO Precisa de jQuery pra mandar trocar a posição da barra -->
     <div class="container-fluid">
       <a href="#" class="navbar-brand">Fallout 2d20</a>
 
@@ -22,8 +22,8 @@
 
       <div class="navbar-text mx-3" id="username">Usuário</div>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-label
-        disabled="Mostrar navegação">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks"
+        aria-label="Mostrar navegação">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -95,7 +95,7 @@
 
     <div class="row g-3 my-1">
 
-      <div class="col-3">
+      <div class="col-sm-3">
 
         <!-- Atributos Principais -->
         <div class="row g-3">
@@ -110,36 +110,69 @@
               <div class="col special-header lck-attr">L</div>
             </div>
             <div class="row mx-auto text-center">
-              <div class="col special-stat str-attr">7</div>
-              <div class="col special-stat per-attr">8</div>
-              <div class="col special-stat end-attr">8</div>
-              <div class="col special-stat cha-attr">9</div>
-              <div class="col special-stat int-attr">5</div>
-              <div class="col special-stat agi-attr">7</div>
+              <div class="col special-stat str-attr">4</div>
+              <div class="col special-stat per-attr">6</div>
+              <div class="col special-stat end-attr">6</div>
+              <div class="col special-stat cha-attr">7</div>
+              <div class="col special-stat int-attr">7</div>
+              <div class="col special-stat agi-attr">4</div>
               <div class="col special-stat lck-attr">6</div>
             </div>
           </div>
         </div>
 
         <!-- Perks -->
-        <div class="col">
+        <div class="row">
           <div class="row mx-auto text-center">
-            <div class="row mx-auto my-3 secao">
+            <div class="row mx-auto my-3 py-3 secao">
               <div class="row">
-                <div class="col-12">Perks</div>
+                <div class="col-12 section-title">Perks</div>
               </div>
-              <div class="row">
-                <div class="col-8">Nome do Perk</div>
-                <div class="col-3">Rank:</div>
-                <div class="col-1">2</div>
+              <div class="container g-3 perk-container">
+                <div class="perk-header">
+                  <div class="row py-2">
+                    <div class="col-8 perk-name">Science!</div>
+                    <div class="col-4">
+                      <div class="btn-group btn-group-sm" role="group" aria-label="Perk rank">
+                        <input type="checkbox" class="btn-check perk-rank-checkbox" id="rank1" autocomplete="off"
+                          checked disabled>
+                        <label class="btn btn-outline-dark" for="rank1">1</label>
+
+                        <input type="checkbox" class="btn-check perk-rank-checkbox" id="rank2" autocomplete="off"
+                          disabled>
+                        <label class="btn btn-outline-dark" for="rank2">2</label>
+
+                        <input type="checkbox" class="btn-check perk-rank-checkbox" id="rank3" autocomplete="off"
+                          disabled>
+                        <label class="btn btn-outline-dark" for="rank3">3</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row my-2">
+                  <div class="col">
+                    <p class="perk-description">
+                      The difficulty of tests you attempt to hack computers is permanently decreased by 1.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <img class="bg-transparent rounded mx-auto d-block" src="res/Hack_the_Mojave.webp"
+              alt="Imagem do Personagem">
           </div>
         </div>
       </div>
 
       <div class="col-5">
-        <div class="">
+        <div>
+
+          <!-- Tabela de Skills -->
           <table class="table-region" id="skills-table">
             <!-- TODO No lugar dos badges, colocar um select -->
             <tr class="table-header">
@@ -150,7 +183,7 @@
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label="Tagged Skill" disabled>
               </td>
               <th class="skill-name">Athletics</th>
-              <td class="attr-number">1</td>
+              <td class="attr-number">3</td>
               <td>+</td>
               <td>
                 <select class="form-select form-select-sm w-auto d-inline str-attr attr-select"
@@ -196,7 +229,7 @@
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Big Guns</th>
-              <td class="attr-number">3</td>
+              <td class="attr-number">1</td>
               <td>+</td>
               <td>
                 <select class="form-select form-select-sm w-auto d-inline end-attr attr-select"
@@ -216,10 +249,10 @@
             </tr>
             <tr>
               <td>
-                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled checked>
               </td>
               <th class="skill-name">Energy Weapons</th>
-              <td class="attr-number">4</td>
+              <td class="attr-number">5</td>
               <td>+</td>
               <td>
                 <select class="form-select form-select-sm w-auto d-inline per-attr attr-select"
@@ -242,7 +275,7 @@
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Explosives</th>
-              <td class="attr-number">4</td>
+              <td class="attr-number">1</td>
               <td>+</td>
               <td>
                 <select class="form-select form-select-sm w-auto d-inline per-attr attr-select"
@@ -265,7 +298,7 @@
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Lockpick</th>
-              <td class="attr-number">2</td>
+              <td class="attr-number">1</td>
               <td>+</td>
               <td>
                 <select class="form-select form-select-sm w-auto d-inline per-attr attr-select"
@@ -288,7 +321,7 @@
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled checked>
               </td>
               <th class="skill-name">Medicine</th>
-              <td class="attr-number">6</td>
+              <td class="attr-number">5</td>
               <td>+</td>
               <td>
                 <select class="form-select form-select-sm w-auto d-inline int-attr attr-select"
@@ -331,10 +364,10 @@
             </tr>
             <tr>
               <td>
-                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled checked>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Pilot</th>
-              <td class="attr-number">5</td>
+              <td class="attr-number">1</td>
               <td>+</td>
               <td>
                 <select class="form-select form-select-sm w-auto d-inline per-attr attr-select"
@@ -357,7 +390,7 @@
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Repair</th>
-              <td class="attr-number">5</td>
+              <td class="attr-number">1</td>
               <td>+</td>
               <td>
                 <select class="form-select form-select-sm w-auto d-inline int-attr attr-select"
@@ -377,10 +410,10 @@
             </tr>
             <tr>
               <td>
-                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled checked>
               </td>
               <th class="skill-name">Science</th>
-              <td class="attr-number">3</td>
+              <td class="attr-number">5</td>
               <td>+</td>
               <td>
                 <select class="form-select form-select-sm w-auto d-inline int-attr attr-select"
@@ -400,10 +433,10 @@
             </tr>
             <tr>
               <td>
-                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled checked>
+                <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Small Guns</th>
-              <td class="attr-number">6</td>
+              <td class="attr-number">1</td>
               <td>+</td>
               <td>
                 <select class="form-select form-select-sm w-auto d-inline agi-attr attr-select"
@@ -426,7 +459,7 @@
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Sneak</th>
-              <td class="attr-number">5</td>
+              <td class="attr-number">1</td>
               <td>+</td>
               <td>
                 <select class="form-select form-select-sm w-auto d-inline agi-attr attr-select"
@@ -449,7 +482,7 @@
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Speech</th>
-              <td class="attr-number">4</td>
+              <td class="attr-number">2</td>
               <td>+</td>
               <td>
                 <select class="form-select form-select-sm w-auto d-inline cha-attr attr-select"
@@ -495,7 +528,7 @@
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Throwing</th>
-              <td class="attr-number">2</td>
+              <td class="attr-number">1</td>
               <td>+</td>
               <td>
                 <select class="form-select form-select-sm w-auto d-inline agi-attr attr-select"
@@ -518,7 +551,7 @@
                 <input type="checkbox" class="form-check-input tagged-skill" aria-label disabled>
               </td>
               <th class="skill-name">Unarmed</th>
-              <td class="attr-number">5</td>
+              <td class="attr-number">1</td>
               <td>+</td>
               <td>
                 <select class="form-select form-select-sm w-auto d-inline str-attr attr-select"
@@ -554,7 +587,7 @@
                     step="1" max="18" placeholder="18">
                 </div>
                 <div class="col-1">/</div>
-                <div class="col-2 max-number" id="total-hp">30</div>
+                <div class="col-2 max-number" id="total-hp">18</div>
 
                 <div class="col-1"> </div>
 
@@ -613,9 +646,9 @@
                   <div class="col-3 limb-table-name">En. DR</div>
                 </div>
                 <div class="row justify-content-center gx-0">
-                  <div class="col-3 limb-table-value">0</div>
-                  <div class="col-3 limb-table-value">0</div>
-                  <div class="col-3 limb-table-value">0</div>
+                  <div class="col-3 limb-table-value">1</div>
+                  <div class="col-3 limb-table-value">1</div>
+                  <div class="col-3 limb-table-value">1</div>
                 </div>
               </div>
 
@@ -629,9 +662,9 @@
                   <div class="col-3 limb-table-name">En. DR</div>
                 </div>
                 <div class="row justify-content-center gx-0">
-                  <div class="col-3 limb-table-value">0</div>
-                  <div class="col-3 limb-table-value">0</div>
-                  <div class="col-3 limb-table-value">0</div>
+                  <div class="col-3 limb-table-value">1</div>
+                  <div class="col-3 limb-table-value">1</div>
+                  <div class="col-3 limb-table-value">1</div>
                 </div>
               </div>
             </div>
@@ -647,9 +680,9 @@
                   <div class="col-3 limb-table-name">En. DR</div>
                 </div>
                 <div class="row justify-content-center gx-0">
-                  <div class="col-3 limb-table-value">0</div>
-                  <div class="col-3 limb-table-value">0</div>
-                  <div class="col-3 limb-table-value">0</div>
+                  <div class="col-3 limb-table-value">1</div>
+                  <div class="col-3 limb-table-value">1</div>
+                  <div class="col-3 limb-table-value">1</div>
                 </div>
               </div>
             </div>
@@ -665,9 +698,9 @@
                   <div class="col-3 limb-table-name">En. DR</div>
                 </div>
                 <div class="row justify-content-center gx-0">
-                  <div class="col-3 limb-table-value">0</div>
-                  <div class="col-3 limb-table-value">0</div>
-                  <div class="col-3 limb-table-value">0</div>
+                  <div class="col-3 limb-table-value">1</div>
+                  <div class="col-3 limb-table-value">1</div>
+                  <div class="col-3 limb-table-value">1</div>
                 </div>
               </div>
 
@@ -681,9 +714,9 @@
                   <div class="col-3 limb-table-name">En. DR</div>
                 </div>
                 <div class="row justify-content-center gx-0">
-                  <div class="col-3 limb-table-value">0</div>
-                  <div class="col-3 limb-table-value">0</div>
-                  <div class="col-3 limb-table-value">0</div>
+                  <div class="col-3 limb-table-value">1</div>
+                  <div class="col-3 limb-table-value">1</div>
+                  <div class="col-3 limb-table-value">1</div>
                 </div>
               </div>
             </div>
@@ -695,68 +728,51 @@
     </div>
 
     <div class="row g-3 my-1">
-      <div class="col-3">
-        <div>
-          <img class="bg-transparent rounded mx-auto d-block" src="res/Hack_the_Mojave.webp" alt="Imagem do Personagem">
-        </div>
-      </div>
-      <div class="col-5">
+      <div class="col">
         <div class="secao">
           <table class="table-region">
             <tr>
-              <th>Name</th>
-              <th>Skill</th>
-              <th>Target</th>
-              <th>DMG Type</th>
-              <th>DR</th>
-              <th>Fire Rate</th>
-              <th>Range</th>
-              <th>Effects</th>
-              <th>Qualities</th>
-              <th>Weight</th>
-              <th>Cost</th>
-              <th>Rarity</th>
+              <th class="table-header">Name</th>
+              <th class="table-header">Attr</th>
+              <th class="table-header">Target</th>
+              <th class="table-header">DMG Type</th>
+              <th class="table-header">DR</th>
+              <th class="table-header">Fire Rate</th>
+              <th class="table-header">Range</th>
+              <th class="table-header">Effects</th>
+              <th class="table-header">Qualities</th>
             </tr>
-            <tr>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
+            <tr class="item-row">
+              <td class="table-text">Laser Gun</td>
+              <td><span class="badge per-attr rounded-pill">PER</span></td>
+              <td class="table-text">11</td>
+              <td class="table-text">Energy</td>
+              <td class="table-text">4</td>
+              <td class="table-text">3</td>
+              <td class="table-text">Close</td>
+              <td class="table-text">Piercing</td>
+              <td class="table-text">-</td>
             </tr>
           </table>
         </div>
       </div>
 
-      <div class="col-4">
+      <div class="col">
         <div class="secao">
           <table class="table-region">
             <tr>
-              <th>Item</th>
-              <th>Physical DR</th>
-              <th>Energy DR</th>
-              <th>Radiation DR</th>
-              <th>Locations Covered</th>
-              <th>Weight</th>
-              <th>Cost</th>
-              <th>Rarity</th>
+              <th class="table-header">Item</th>
+              <th class="table-header">Physical DR</th>
+              <th class="table-header">Energy DR</th>
+              <th class="table-header">Radiation DR</th>
+              <th class="table-header">Locations Covered</th>
             </tr>
-            <tr>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
+            <tr class="item-row">
+              <td class="table-text">Brotherhood of Steel Uniform</td>
+              <td class="table-text">1</td>
+              <td class="table-text">1</td>
+              <td class="table-text">1</td>
+              <td class="table-text">Arms, Legs, Torso</td>
             </tr>
           </table>
         </div>

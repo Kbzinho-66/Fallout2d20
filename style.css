@@ -190,6 +190,16 @@ h1 {
     border-bottom: 2px solid #325886;
 }
 
+.table-text {
+    font-family: Monofont, monospace;
+    font-weight: lighter;
+    font-size: 1rem;
+}
+
+.item-row {
+    height: 2em;
+}
+
 .attr-number {
     font-family: Monofont, monospace;
 }
@@ -200,7 +210,6 @@ h1 {
 
 .attr-select[data-chosen='str'] {
     background-color: #797D62;
-    color: white;
 }
 
 .attr-select[data-chosen='per'] {
@@ -225,4 +234,31 @@ h1 {
 
 .attr-select[data-chosen='lck'] {
     background-color: #997B66;
+}
+
+.perk-container {
+    background-color: #E3D194;
+    border-radius: 5px;
+    font-family: Monofont, monospace;
+}
+
+.perk-header {
+    border-bottom: 1px solid #325886;
+}
+
+.perk-rank-checkbox {
+    background-color: #82A7D6;
+}
+
+.perk-name {
+    font-weight: bold;
+}
+
+.perk-description {
+    text-align: justify;
+    max-height: 10rem;
+}
+
+.teste {
+    height: 35rem;
 }
