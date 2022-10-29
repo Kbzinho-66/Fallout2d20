@@ -11,7 +11,7 @@ body {
 
 @media screen and (min-width: 992px) {
     body {
-        font-size: 1.4em;
+        font-size: 1.3em;
     }
 }
 
@@ -285,4 +285,22 @@ h1 {
 .perk-description {
     text-align: justify;
     max-height: 10rem;
+}
+
+@media screen and (min-width: 992px) {
+    .section-title {
+        font-size: 1.2em;
+    }
+
+    #skills-table {
+        font-size: 1.0em;
+    }
+
+    .limb-table-name {
+        font-size: 0.9em;
+    }
+
+    #body-stats {
+        background-size: 35%;
+    }
 }
