@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+  <base href=".">
   <meta charset="UTF-8">
   <link rel="shortcut icon" href="#">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
@@ -46,7 +47,7 @@
         <div class="text-field py-1" id="origin-field">Brotherhood Initiate</div>
       </div>
       <div class="col-1">
-        <div class="text-field py-1" id="current-level">Level 2</div>
+        <div class="text-field py-1" id="current-level">Level 0</div>
       </div>
 
       <div class="col-5">
@@ -58,7 +59,7 @@
               <input class="number-input" type="numeric" name="current-xp" id="current-xp" min="0" step="1">
             </div>
             <div class="col-1">/</div>
-            <div class="col-2 max-number" id="total-xp">300</div>
+            <div class="col-2 max-number" id="total-xp">-1</div>
           </div>
         </div>
       </div>
@@ -111,13 +112,13 @@
               <div class="col special-header lck-attr">L</div>
             </div>
             <div class="row mx-auto text-center">
-              <div class="col special-stat str-attr">4</div>
-              <div class="col special-stat per-attr">6</div>
-              <div class="col special-stat end-attr">6</div>
-              <div class="col special-stat cha-attr">7</div>
-              <div class="col special-stat int-attr">7</div>
-              <div class="col special-stat agi-attr">4</div>
-              <div class="col special-stat lck-attr">6</div>
+              <div class="col special-stat str-attr" id="str-stat">-1</div>
+              <div class="col special-stat per-attr" id="per-stat">-1</div>
+              <div class="col special-stat end-attr" id="end-stat">-1</div>
+              <div class="col special-stat cha-attr" id="cha-stat">-1</div>
+              <div class="col special-stat int-attr" id="int-stat">-1</div>
+              <div class="col special-stat agi-attr" id="agi-stat">-1</div>
+              <div class="col special-stat lck-attr" id="lck-stat">-1</div>
             </div>
           </div>
         </div>
@@ -602,15 +603,13 @@
             <div class="row secao g-3 mx-auto my-1">
               <div class="row">
                 <div class="col">Melee Damage</div>
-                <div class="col">Defense</div>
                 <div class="col">Initiative</div>
                 <div class="col">Poison Resistance</div>
               </div>
               <div class="row">
-                <div class="col-3 max-number">0</div>
-                <div class="col-3 max-number">1</div>
-                <div class="col-3 max-number">12</div>
-                <div class="col-3 max-number">0</div>
+                <div class="col max-number" id="melee_dmg"> </div>
+                <div class="col max-number" id="initiative"> </div>
+                <div class="col max-number" id="poison_dr"> </div>
               </div>
             </div>
 
@@ -791,7 +790,8 @@
     <!-- Ainda não sei o que colocar aqui -->
   </footer>
 
-  <script src="app.js" defer></script>
+  <script src="js/app.js" type="module" async></script>
+  <script src="js/Character.js" type="module" async></script>
   <script src="bootstrap/js/bootstrap.bundle.js"></script>
 </body>
 

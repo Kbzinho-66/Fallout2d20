@@ -4,7 +4,7 @@ $character_id = $_GET['id'];
 
 $conn = mysqli_connect('localhost', 'Gabriel', 'BigIron', 'Fallout2d20');
 
-$stmt = $conn->prepare('SELECT * FROM characters WHERE character_id = ?');
+$stmt = $conn->prepare('SELECT * FROM special_attributes WHERE character_id = ?');
 $stmt->bind_param('i', $character_id);
 $stmt->execute();
 

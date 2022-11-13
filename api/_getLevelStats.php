@@ -1,11 +1,11 @@
 <?php
 
-$character_id = $_GET['id'];
+$level = $_GET['level'];
 
 $conn = mysqli_connect('localhost', 'Gabriel', 'BigIron', 'Fallout2d20');
 
-$stmt = $conn->prepare('SELECT * FROM characters WHERE character_id = ?');
-$stmt->bind_param('i', $character_id);
+$stmt = $conn->prepare('SELECT * FROM levels WHERE level = ?');
+$stmt->bind_param('i', $level);
 $stmt->execute();
 
 $result = $stmt->get_result();
