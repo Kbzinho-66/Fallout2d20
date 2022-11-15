@@ -31,4 +31,4 @@ char.getCharacterInfo().then( () => {
   })
 });
 
-
+char.getSkills();

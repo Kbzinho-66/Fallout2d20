@@ -119,7 +119,6 @@ export default class Character {
           this.ap.current   = response['action_points'];
           this.lp.current   = response['luck_points'];
           this.hp.current   = response['health_points'];
-          console.log(this);
         })
         .catch(console.error);
   }
@@ -176,5 +175,12 @@ export default class Character {
         .catch(console.error);
   }
 
+  getSkills() {
+    const url = `api/_getSkills.php?id=${this.id}`;
+    fetch(url)
+        .then( res => res.json() )
+        .then( console.log )
+        .catch(console.error);
+  }
 
 }
