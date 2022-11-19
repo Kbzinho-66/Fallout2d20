@@ -25,7 +25,7 @@ h1 {
     font-size: 2em;
 }
 
-#character-name {
+#character_name {
     text-align: center;
     vertical-align: auto;
 
@@ -49,7 +49,7 @@ h1 {
     text-align: center;
 }
 
-.text-field {
+.text_field {
     background-color: #FCE8A4;
     border-radius: 5px;
     font-size: 1.2rem;
@@ -57,7 +57,7 @@ h1 {
 }
 
 /* Por enquanto é igual, mudar depois */
-.table-region {
+.table_region {
     border-radius: 5px;
     background-color: #FCE8A4;
     font-size: 1.3rem;
@@ -66,12 +66,12 @@ h1 {
     width: 100%;
 }
 
-.input-label {
+.input_label {
     font-size: 1.15rem;
     font-weight: bold;
 }
 
-.number-input {
+.number_input {
     font-family: 'Monofont', monospace;
     letter-spacing: 0.05rem;
     text-align: center;
@@ -86,65 +86,65 @@ h1 {
     width: 5rem;
 }
 
-.number-input:focus {
+.number_input:focus {
     border-bottom: 2px solid rgb(33, 37, 41);
     text-align: center;
 }
 
-.digit-input {
+.digit_input {
     width: 2.5rem;
 }
 
-.max-number {
+.max_number {
     font-family: 'Monofont', monospace;
     letter-spacing: 0.05rem;
     text-align: center;
     padding: 2px;
 }
 
-.special-header {
+.special_header {
     font-size: 2.5rem;
     border-radius: 90% 90% 0 0;
 }
 
-.special-stat {
+.special_stat {
     font-size: 1.5rem;
 }
 
-.str-attr {
+.str_attr {
     background-color: #797D62;
 }
 
-.per-attr {
+.per_attr {
     background-color: #9B9B7A;
 }
 
-.end-attr {
+.end_attr {
     background-color: #D9AE94;
 }
 
-.cha-attr {
+.cha_attr {
     background-color: #F1DCA7;
 }
 
-.int-attr {
+.int_attr {
     background-color: #FFCB69;
 }
 
-.agi-attr {
+.agi_attr {
     background-color: #D08C60;
 }
 
-.lck-attr {
+.lck_attr {
     background-color: #997B66;
 }
 
-.section-title {
+.section_title {
     font-weight: bold;
     font-size: 1.3rem;
 }
 
-.limb-table {
+.limb_table {
     border: 1px solid #82A7D6;
     border-radius: 5px;
     width: -moz-fit-content;
@@ -152,29 +152,29 @@ h1 {
     background-color: #FEF5D7;
 }
 
-.limb-table-title {
+.limb_table_title {
     font-weight: bold;
     border-bottom: 1px solid #82A7D6;
     background-color: #82A7D6;
 }
 
-.limb-table-name {
+.limb_table_name {
     width: 4rem;
 }
 
-.limb-table-value {
+.limb_table_value {
     width: 4rem;
     font-family: Monofont, monospace;
 }
 
-.limb-table-name:nth-of-type(2),
-.limb-table-value:nth-of-type(2) {
+.limb_table_name:nth-of-type(2),
+.limb_table_value:nth-of-type(2) {
     width: 4rem;
     border-left: 1px solid #82A7D6;
     border-right: 1px solid #82A7D6;
 }
 
-#body-stats {
+#body_stats {
     background-image: url(res/Body_Status.png);
     background-attachment: scroll;
     background-position: bottom;
@@ -182,79 +182,79 @@ h1 {
     background-size: 50%;
 }
 
-.skill-name {
+.skill_name {
     font-weight: normal;
 }
 
-.table-header {
+.table_header {
     border-bottom: 2px solid #325886;
 }
 
-.table-text {
+.table_text {
     font-family: Monofont, monospace;
     font-weight: lighter;
     font-size: 1rem;
 }
 
-.item-row {
+.item_row {
     height: 2em;
 }
 
-.attr-number {
+.attr_number {
     font-family: Monofont, monospace;
 }
 
-.attr-select {
+.attr_select {
     font-weight: bold;
 }
 
-.attr-select[data-chosen='str'] {
+.attr_select[data-chosen='str'] {
     background-color: #797D62;
 }
 
-.attr-select[data-chosen='per'] {
+.attr_select[data-chosen='per'] {
     background-color: #9B9B7A;
 }
 
-.attr-select[data-chosen='end'] {
+.attr_select[data-chosen='end'] {
     background-color: #D9AE94;
 }
 
-.attr-select[data-chosen='cha'] {
+.attr_select[data-chosen='cha'] {
     background-color: #F1DCA7;
 }
 
-.attr-select[data-chosen='int'] {
+.attr_select[data-chosen='int'] {
     background-color: #FFCB69;
 }
 
-.attr-select[data-chosen='agi'] {
+.attr_select[data-chosen='agi'] {
     background-color: #D08C60;
 }
 
-.attr-select[data-chosen='lck'] {
+.attr_select[data-chosen='lck'] {
     background-color: #997B66;
 }
 
-.perk-container {
+.perk_container {
     background-color: #E3D194;
     border-radius: 5px;
     font-family: Monofont, monospace;
 }
 
-.perk-header {
+.perk_header {
     border-bottom: 1px solid #325886;
 }
 
-.perk-rank-checkbox {
+.perk_rank_checkbox {
     background-color: #82A7D6;
 }
 
-.perk-name {
+.perk_name {
     font-weight: bold;
 }
 
-.perk-description {
+.perk_description {
     text-align: justify;
     max-height: 10rem;
 }

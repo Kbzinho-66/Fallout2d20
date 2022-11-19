@@ -177,9 +177,20 @@ export default class Character {
 
   getSkills() {
     const url = `api/_getSkills.php?id=${this.id}`;
-    fetch(url)
+    return fetch(url)
         .then( res => res.json() )
-        .then( console.log )
+        .then( response => {
+          for (const key of Object.keys(response)) {
+            // O nome dos campos vem em snake_case do Banco de Dados, mas tá em camelCase no objeto
+            const camel = key.replace(
+                /(?!^)_(.)/g,
+                (_, char) => char.toUpperCase() );
+
+            const tagged = response[key].tagged;
+            this.skills[camel].tagged = tagged;
+            this.skills[camel].rank   = response[key].rank + (tagged ? 2 : 0);
+          }
+        })
         .catch(console.error);
   }
 
