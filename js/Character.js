@@ -69,42 +69,11 @@ export default class Character {
       unarmed      : {tagged: false, rank: -1},
     };
 
-    this.perks = [
-      {name: '', rank: -1, maxRank: -1, description: '...'},
-    ];
+    this.perks = [];
 
-    this.apparel = [
-      {
-        name       : '',
-        physicalDR : -1,
-        radiationDR: -1,
-        energyDR   : -1,
-        covers     : {
-          head     : false,
-          leftArm  : false,
-          torso    : false,
-          rightArm : false,
-          leftLeg  : false,
-          rightLeg : false
-        }
-      },
-    ];
+    this.apparel = [];
 
-    this.weapons = [
-      {
-        name     : '',
-        attr     : '',
-        target   : -1,
-        dmgType  : '',
-        dmgRating: -1,
-        fireRate : -1,
-        range    : '',
-        effects  : [
-          {name  : '', description: '...'},
-        ],
-        qualities: []
-      }
-    ]
+    this.weapons = []
   }
 
   getCharacterInfo() {
@@ -180,11 +149,15 @@ export default class Character {
     return fetch(url)
         .then( res => res.json() )
         .then( response => {
+          const snakeToCamel = function(snake) {
+            return snake.replace(
+                /(?!^)_(.)/g,
+                (_, char) => char.toUpperCase());
+          }
+
           for (const key of Object.keys(response)) {
             // O nome dos campos vem em snake_case do Banco de Dados, mas tá em camelCase no objeto
-            const camel = key.replace(
-                /(?!^)_(.)/g,
-                (_, char) => char.toUpperCase() );
+            const camel = snakeToCamel(key);
 
             const tagged = response[key].tagged;
             this.skills[camel].tagged = tagged;
@@ -194,4 +167,41 @@ export default class Character {
         .catch(console.error);
   }
 
+  getPerks() {
+    const url = `api/_getPerks.php?id=${this.id}`;
+    return fetch(url)
+        .then( res => res.json() )
+        .then( response => {
+          for (const perk of response) {
+            this.perks.push(perk);
+          }
+        })
+        .catch(console.error)
+  }
+
+  getWeapons() {
+    const url = `api/_getWeapons.php?id=${this.id}`;
+    return fetch(url)
+        .then( res => res.json() )
+        .then( response => {
+          console.log(response);
+          for (const weapon of response) {
+            this.weapons.push(weapon);
+          }
+        })
+        .catch(console.error);
+  }
+
+  getApparel() {
+    const url = `api/_getApparel.php?id=${this.id}`;
+    return fetch(url)
+        .then( res => res.json() )
+        .then( response => {
+          console.log(response);
+          for (const piece of response) {
+            this.apparel.push(piece);
+          }
+        })
+        .catch(console.error);
+  }
 }

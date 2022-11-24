@@ -1,5 +1,7 @@
 import Character from "./Character.js";
 
+// Obviamente, seria melhor pegar o id do banco de dados de alguma forma, mas não vai
+// dar tempo de implementar isso porque teria que fazer algo com usuário.
 const char = new Character(1);
 
 char.getCharacterInfo().then( () => {
@@ -45,25 +47,126 @@ char.getCharacterInfo().then( () => {
         }
       }
 
-      updateSkillTarget();
-    })
-  })
+      char.getSkills().then( () => {
+        const camelToSnake = function(name) {
+          return name.replace(
+              /[A-Z]/g,
+              char => `_${char.toLowerCase()}`
+          );
+        };
+
+        for (const camel of Object.keys(char.skills)) {
+          //  No objeto, as chaves tão em camelCase, mas precisa em snake_case pra acessar o HTML
+          const snake = camelToSnake(camel);
+
+          document.getElementById(`${snake}_tagged`).checked = char.skills[camel].tagged;
+          document.getElementById(`${snake}_rank`).innerHTML = char.skills[camel].rank;
+        }
+        updateSkillsTarget();
+
+        char.getWeapons().then( () => {
+          if (char.weapons.length) {
+            const weaponAttributes = {
+              'Melee Weapons' : { short: 'str', full: 'strength'  , skill: 'meleeWeapons' },
+              'Small Guns'    : { short: 'agi', full: 'agility'   , skill: 'smallGuns' },
+              'Big Guns'      : { short: 'end', full: 'endurance' , skill: 'bigGuns' },
+              'Energy Weapons': { short: 'per', full: 'perception', skill: 'energyWeapons' },
+              'Explosives'    : { short: 'per', full: 'perception', skill: 'explosives' },
+              'Throwing'      : { short: 'agi', full: 'agility'   , skill: 'throwing' },
+              'Unarmed'       : { short: 'str', full: 'strength'  , skill: 'unarmed' },
+            };
+
+            const table = document.getElementById('weapon_list').getElementsByTagName('tbody')[0];
+            for (const weapon of char.weapons) {
+              const newRow = table.insertRow();
+              newRow.classList.add('item_row');
+              let value;
+
+              const nameCell = newRow.insertCell();
+              nameCell.classList.add('table_text');
+              value = document.createTextNode(weapon['weapon_name']);
+              nameCell.appendChild(value);
+
+              const attrCell = newRow.insertCell();
+              const weaponType = weapon['weapon_type'];
+              const shortStat = weaponAttributes[weaponType].short;
+              const attrSpan = document.createElement('span');
+              attrSpan.classList.add('badge', `${shortStat}_attr`, 'rounded-pill');
+              attrSpan.innerHTML = shortStat.toUpperCase();
+              attrCell.appendChild(attrSpan);
+
+              const targetCell = newRow.insertCell();
+              targetCell.classList.add('table_text');
+              const completeStat = weaponAttributes[weaponType].full;
+              const skill = weaponAttributes[weaponType].skill;
+              const target = char.special[completeStat] + char.skills[skill].rank;
+              console.log(target);
+              value = document.createTextNode(target);
+              targetCell.appendChild(value);
+
+              const dmgTypeCell = newRow.insertCell();
+              dmgTypeCell.classList.add('table_text');
+              value = document.createTextNode(weapon['damage_type']);
+              dmgTypeCell.appendChild(value);
+
+              const drCell = newRow.insertCell();
+              drCell.classList.add('table_text');
+              value = document.createTextNode(weapon['damage_rating']);
+              drCell.appendChild(value);
+
+              const fireRateCell = newRow.insertCell();
+              fireRateCell.classList.add('table_text');
+              value = document.createTextNode(weapon['fire_rate']);
+              fireRateCell.appendChild(value);
+
+              const rangeCell = newRow.insertCell();
+              rangeCell.classList.add('table_text');
+              value = document.createTextNode(weapon['firing_range']);
+              rangeCell.appendChild(value);
+
+              const effectsCell = newRow.insertCell();
+              effectsCell.classList.add('table_text');
+              value = document.createTextNode(weapon['damage_effects'] ?? '-');
+              effectsCell.appendChild(value);
+
+              const qualitiesCell = newRow.insertCell();
+              qualitiesCell.classList.add('table_text');
+              value = document.createTextNode(weapon['q'] ?? '-');
+              qualitiesCell.appendChild(value);
+            }
+          }
+        });
+      });
+    });
+  });
 });
 
-char.getSkills().then( () => {
-  for (const camel of Object.keys(char.skills)) {
-    //  No objeto, as chaves tão em camelCase, mas precisa em snake_case pra acessar o HTML
-    const snake = camelToSnake(camel);
-
-    document.getElementById(`${snake}_tagged`).checked = char.skills[camel].tagged;
-    document.getElementById(`${snake}_rank`).innerHTML = char.skills[camel].rank;
-
-    updateSkillTarget();
+char.getPerks().then( () => {
+  if (char.perks.length) {
+    document.getElementById('perk_list').classList.remove('d-none');
+    // TODO Idealmente, teria que listar todos os perks aqui, mas com html puro é muito complexo...
   }
 });
 
+char.getApparel().then( () => {
+  if (char.apparel.length) {
+    // document.getElementById('apparel_list').classList.remove('d-none');
+    for (const piece of char.apparel) {
+      // Mostrar a armadura/roupa
+    }
+  }
+})
+
+/*************************************** FUNÇÕES ***************************************/
 //  Percorre cada uma das habilidades e soma o rank com o bônus de SPECIAL selecionado
-function updateSkillTarget() {
+function updateSkillsTarget() {
+  const camelToSnake = function(name) {
+    return name.replace(
+        /[A-Z]/g,
+        char => `_${char.toLowerCase()}`
+    );
+  };
+
   const names = {
     str : 'strength',
     per : 'perception',
@@ -81,11 +184,4 @@ function updateSkillTarget() {
     const skillTarget = char.skills[camel].rank + char.special[selectedSpecial];
     document.getElementById(`${snake}_target`).innerHTML = skillTarget;
   }
-}
-
-function camelToSnake(name) {
-  return name.replace(
-      /[A-Z]/g,
-      char => `_${char.toLowerCase()}`
-  );
 }
