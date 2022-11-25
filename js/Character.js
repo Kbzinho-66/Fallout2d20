@@ -6,25 +6,39 @@ export default class Character {
     this.origin        = '';
     this.currentLevel = 1;
 
+    // Experience Points
     this.xp = {
       current: 0,
       max: -1
     };
 
+    // Actions Points
     this.ap = {
       current: -1,
       max    : 6
     };
 
+    // Luck Points
     this.lp = {
       current: -1,
       max    : -1
     };
 
+    // Health Points
     this.hp = {
       current: -1,
       max    : -1
     };
+
+    // Damage Resistance
+    this.dr = {
+      head     : {phys: 0, rad: 0, en: 0},
+      leftArm : {phys: 0, rad: 0, en: 0},
+      torso    : {phys: 0, rad: 0, en: 0},
+      rightArm: {phys: 0, rad: 0, en: 0},
+      leftLeg : {phys: 0, rad: 0, en: 0},
+      rightLeg: {phys: 0, rad: 0, en: 0},
+    }
 
     this.levelStats = {
       skillRanks: 1,
@@ -46,7 +60,7 @@ export default class Character {
       defense   : -1,
       meleeDmg  : -1,
       initiative: -1,
-      poisonRes : -1
+      poisonRes : 0
     };
 
     this.skills = {
@@ -73,7 +87,7 @@ export default class Character {
 
     this.apparel = [];
 
-    this.weapons = []
+    this.weapons = [];
   }
 
   getCharacterInfo() {
@@ -184,7 +198,6 @@ export default class Character {
     return fetch(url)
         .then( res => res.json() )
         .then( response => {
-          console.log(response);
           for (const weapon of response) {
             this.weapons.push(weapon);
           }
@@ -197,9 +210,65 @@ export default class Character {
     return fetch(url)
         .then( res => res.json() )
         .then( response => {
-          console.log(response);
           for (const piece of response) {
-            this.apparel.push(piece);
+            const phys_dr = piece['physical_dr'];
+            const rad_dr  = piece['radiation_dr'];
+            const en_dr   = piece['energy_dr'];
+
+            this.apparel.push({
+              apparel_id  : piece['apparel_id'],
+              name        : piece['name'],
+              type        : piece['type'],
+              cost        : piece['cost'],
+              physical_dr : phys_dr,
+              radiation_dr: rad_dr,
+              energy_dr   : en_dr,
+              covers      : {
+                head      : Boolean(piece['head']),
+                leftArm  : Boolean(piece['left_arm']),
+                torso     : Boolean(piece['torso']),
+                rightArm : Boolean(piece['right_arm']),
+                leftLeg  : Boolean(piece['left_leg']),
+                rightLeg : Boolean(piece['right_leg'])
+              }
+            });
+
+            if (piece['head']) {
+              this.dr.head.phys += phys_dr;
+              this.dr.head.rad  += rad_dr;
+              this.dr.head.en   += en_dr;
+            }
+
+            if (piece['left_arm']) {
+              this.dr.leftArm.phys += phys_dr;
+              this.dr.leftArm.rad  += rad_dr;
+              this.dr.leftArm.en   += en_dr;
+            }
+
+            if (piece['torso']) {
+              this.dr.torso.phys += phys_dr;
+              this.dr.torso.rad  += rad_dr;
+              this.dr.torso.en   += en_dr;
+            }
+
+            if (piece['right_arm']) {
+              this.dr.rightArm.phys += phys_dr;
+              this.dr.rightArm.rad  += rad_dr;
+              this.dr.rightArm.en   += en_dr;
+            }
+
+            if (piece['left_leg']) {
+              this.dr.leftLeg.phys += phys_dr;
+              this.dr.leftLeg.rad  += rad_dr;
+              this.dr.leftLeg.en   += en_dr;
+            }
+
+            if (piece['right_leg']) {
+              this.dr.rightLeg.phys += phys_dr;
+              this.dr.rightLeg.rad  += rad_dr;
+              this.dr.rightLeg.en   += en_dr;
+            }
+
           }
         })
         .catch(console.error);

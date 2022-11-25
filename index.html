@@ -651,9 +651,9 @@
                 <div class="col-3 limb_table_name">En. DR</div>
               </div>
               <div class="row justify-content-center gx-0">
-                <div class="col-3 limb_table_value">0</div>
-                <div class="col-3 limb_table_value">0</div>
-                <div class="col-3 limb_table_value">0</div>
+                <div class="col-3 limb_table_value" id="head_phys_dr">0</div>
+                <div class="col-3 limb_table_value" id="head_rad_dr">0</div>
+                <div class="col-3 limb_table_value" id="head_en_dr">0</div>
               </div>
             </div>
           </div>
@@ -669,9 +669,9 @@
                 <div class="col-3 limb_table_name">En. DR</div>
               </div>
               <div class="row justify-content-center gx-0">
-                <div class="col-3 limb_table_value">1</div>
-                <div class="col-3 limb_table_value">1</div>
-                <div class="col-3 limb_table_value">1</div>
+                <div class="col-3 limb_table_value" id="left_arm_phys_dr">0</div>
+                <div class="col-3 limb_table_value" id="left_arm_rad_dr">0</div>
+                <div class="col-3 limb_table_value" id="left_arm_en_dr">0</div>
               </div>
             </div>
 
@@ -685,9 +685,9 @@
                 <div class="col-3 limb_table_name">En. DR</div>
               </div>
               <div class="row justify-content-center gx-0">
-                <div class="col-3 limb_table_value">1</div>
-                <div class="col-3 limb_table_value">1</div>
-                <div class="col-3 limb_table_value">1</div>
+                <div class="col-3 limb_table_value" id="right_arm_phys_dr">0</div>
+                <div class="col-3 limb_table_value" id="right_arm_rad_dr">0</div>
+                <div class="col-3 limb_table_value" id="right_arm_en_dr">0</div>
               </div>
             </div>
           </div>
@@ -703,9 +703,9 @@
                 <div class="col-3 limb_table_name">En. DR</div>
               </div>
               <div class="row justify-content-center gx-0">
-                <div class="col-3 limb_table_value">1</div>
-                <div class="col-3 limb_table_value">1</div>
-                <div class="col-3 limb_table_value">1</div>
+                <div class="col-3 limb_table_value" id="torso_phys_dr">0</div>
+                <div class="col-3 limb_table_value" id="torso_rad_dr">0</div>
+                <div class="col-3 limb_table_value" id="torso_en_dr">0</div>
               </div>
             </div>
           </div>
@@ -721,9 +721,9 @@
                 <div class="col-3 limb_table_name">En. DR</div>
               </div>
               <div class="row justify-content-center gx-0">
-                <div class="col-3 limb_table_value">1</div>
-                <div class="col-3 limb_table_value">1</div>
-                <div class="col-3 limb_table_value">1</div>
+                <div class="col-3 limb_table_value" id="left_leg_phys_dr">0</div>
+                <div class="col-3 limb_table_value" id="left_leg_rad_dr">0</div>
+                <div class="col-3 limb_table_value" id="left_leg_en_dr">0</div>
               </div>
             </div>
 
@@ -737,9 +737,9 @@
                 <div class="col-3 limb_table_name">En. DR</div>
               </div>
               <div class="row justify-content-center gx-0">
-                <div class="col-3 limb_table_value">1</div>
-                <div class="col-3 limb_table_value">1</div>
-                <div class="col-3 limb_table_value">1</div>
+                <div class="col-3 limb_table_value" id="right_leg_phys_dr">0</div>
+                <div class="col-3 limb_table_value" id="right_leg_rad_dr">0</div>
+                <div class="col-3 limb_table_value" id="right_leg_en_dr">0</div>
               </div>
             </div>
           </div>
@@ -770,7 +770,7 @@
           </thead>
           <tbody>
           </tbody>
-          <tfoot>
+          <tfoot class="d-none">
             <tr class="bg-info">
               <th colspan="9">Botão pra adicionar mais armas</th>
             </tr>
@@ -782,7 +782,7 @@
     <!-- Tabela de armaduras -->
     <div class="col">
       <div class="section">
-        <table class="table_region">
+        <table class="table_region" id="apparel_list">
           <thead>
             <tr>
               <th class="table_header">Item</th>
@@ -792,16 +792,9 @@
               <th class="table_header">Locations Covered</th>
             </tr>
           </thead>
-          <tbody class="d-none" id="apparel_list">
-            <tr class="item_row">
-              <td class="table_text">Brotherhood of Steel Uniform</td>
-              <td class="table_text">1</td>
-              <td class="table_text">1</td>
-              <td class="table_text">1</td>
-              <td class="table_text">Arms, Legs, Torso</td>
-            </tr>
+          <tbody>
           </tbody>
-          <tfoot>
+          <tfoot class="d-none">
             <tr class="bg-info">
               <th>Botão pra adicionar outra armadura</th>
             </tr>
