@@ -53,6 +53,7 @@
     <div class="col-5">
       <div class="section">
         <div class="row justify-content-center py-1">
+          <!-- TODO Melhorar isso com jQuery / JS -->
           <label class="col-2 input_label" for="current_xp">Experience</label>
           <div class="col-2">
             <!-- TODO Melhorar isso com jQuery / JS -->
@@ -69,7 +70,6 @@
         <div class="row justify-content-center py-1">
           <label class="col-5 input_label" for="current_ap">Action Points</label>
           <div class="col-2">
-            <!-- TODO Melhorar isso com jQuery / JS -->
             <input class="number_input digit_input" type="number" name="current_ap" id="current_ap" min="0" step="1"
                    max="6">
           </div>
@@ -84,7 +84,6 @@
         <div class="row justify-content-center py-1">
           <label class="col-4 input_label" for="current_lp">Luck Points</label>
           <div class="col-2">
-            <!-- TODO Melhorar isso com jQuery / JS -->
             <input class="number_input digit_input" type="number" name="current_lp" id="current_lp" min="0" step="1"
                    max="6">
           </div>
@@ -203,7 +202,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number str_bonus">-1</td>
+            <td class="attr_number str_bonus" id="athletics_special_bonus">-1</td>
             <td>=</td>
             <td class="attr_number" id="athletics_target">-1</td>
           </tr>
@@ -227,7 +226,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number cha_bonus">9</td>
+            <td class="attr_number cha_bonus" id="barter_special_bonus">9</td>
             <td>=</td>
             <td class="attr_number" id="barter_target">-1</td>
           </tr>
@@ -251,7 +250,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number end_bonus">8</td>
+            <td class="attr_number end_bonus" id="big_guns_special_bonus">8</td>
             <td>=</td>
             <td class="attr_number" id="big_guns_target">-1</td>
           </tr>
@@ -276,7 +275,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number per_bonus">8</td>
+            <td class="attr_number per_bonus" id="energy_weapons_special_bonus">8</td>
             <td>=</td>
             <td class="attr_number" id="energy_weapons_target">-1</td>
           </tr>
@@ -300,7 +299,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number per_bonus">8</td>
+            <td class="attr_number per_bonus" id="explosives_special_bonus">8</td>
             <td>=</td>
             <td class="attr_number" id="explosives_target">-1</td>
           </tr>
@@ -324,7 +323,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number per_bonus">8</td>
+            <td class="attr_number per_bonus" id="lockpick_special_bonus">8</td>
             <td>=</td>
             <td class="attr_number" id="lockpick_target">-1</td>
           </tr>
@@ -349,7 +348,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number int_bonus">5</td>
+            <td class="attr_number int_bonus" id="medicine_special_bonus">5</td>
             <td>=</td>
             <td class="attr_number" id="medicine_target">-1</td>
           </tr>
@@ -374,7 +373,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number str_bonus">7</td>
+            <td class="attr_number str_bonus" id="melee_weapons_special_bonus">7</td>
             <td>=</td>
             <td class="attr_number" id="melee_weapons_target">-1</td>
           </tr>
@@ -397,7 +396,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number per_bonus">8</td>
+            <td class="attr_number per_bonus" id="pilot_special_bonus">8</td>
             <td>=</td>
             <td class="attr_number" id="pilot_target">-1</td>
           </tr>
@@ -421,7 +420,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number int_bonus">5</td>
+            <td class="attr_number int_bonus" id="repair_special_bonus">5</td>
             <td>=</td>
             <td class="attr_number" id="repair_target">-1</td>
           </tr>
@@ -446,7 +445,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number int_bonus">5</td>
+            <td class="attr_number int_bonus" id="science_special_bonus">5</td>
             <td>=</td>
             <td class="attr_number" id="science_target">-1</td>
           </tr>
@@ -470,7 +469,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number agi_bonus">7</td>
+            <td class="attr_number agi_bonus" id="small_guns_special_bonus">7</td>
             <td>=</td>
             <td class="attr_number" id="small_guns_target">-1</td>
           </tr>
@@ -493,7 +492,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number agi_bonus">7</td>
+            <td class="attr_number agi_bonus" id="sneak_special_bonus">7</td>
             <td>=</td>
             <td class="attr_number" id="sneak_target">-1</td>
           </tr>
@@ -517,7 +516,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number cha_bonus">9</td>
+            <td class="attr_number cha_bonus" id="speech_special_bonus">9</td>
             <td>=</td>
             <td class="attr_number" id="speech_target">-1</td>
           </tr>
@@ -541,7 +540,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number end_bonus">8</td>
+            <td class="attr_number end_bonus" id="survival_special_bonus">8</td>
             <td>=</td>
             <td class="attr_number" id="survival_target">-1</td>
           </tr>
@@ -565,7 +564,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number agi_bonus">7</td>
+            <td class="attr_number agi_bonus" id="throwing_special_bonus">7</td>
             <td>=</td>
             <td class="attr_number" id="throwing_target">-1</td>
           </tr>
@@ -589,7 +588,7 @@
                 <option class="attr_option" value="lck">LCK</option>
               </select>
             </td>
-            <td class="attr_number str_bonus">7</td>
+            <td class="attr_number str_bonus" id="unarmed_special_bonus">7</td>
             <td>=</td>
             <td class="attr_number" id="unarmed_target">-1</td>
           </tr>
@@ -607,7 +606,6 @@
             <div class="row justify-content-center py-1">
               <label class="col-3 input_label" for="current_hp">Health Points</label>
               <div class="col-2">
-                <!-- TODO Melhorar isso com jQuery / JS -->
                 <input class="number_input digit_input" type="number" name="current_hp" id="current_hp" min="0"
                        step="1" max="18" placeholder="18">
               </div>

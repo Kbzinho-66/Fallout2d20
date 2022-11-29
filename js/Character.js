@@ -273,4 +273,75 @@ export default class Character {
         })
         .catch(console.error);
   }
+
+  getSpecialAttribute(special) {
+    switch (special.toLowerCase()) {
+      case 'str':
+      case 'strength':
+        return this.special.strength;
+      case 'per':
+      case 'perception':
+        return this.special.perception;
+      case 'end':
+      case 'endurance':
+        return this.special.endurance;
+      case 'cha':
+      case 'charisma':
+        return this.special.charisma;
+      case 'int':
+      case 'intelligence':
+        return this.special.intelligence;
+      case 'agi':
+      case 'agility':
+        return this.special.agility;
+      case 'lck':
+      case 'luck':
+        return this.special.luck;
+      default:
+        return '';
+    }
+  }
+
+  getSkillRank(skill) {
+    switch (skill) {
+      case 'athletics':
+        return this.skills.athletics.rank;
+      case 'barter':
+        return this.skills.barter.rank;
+      case 'bigGuns':
+      case 'big_guns':
+        return this.skills.bigGuns.rank;
+      case 'energyWeapons':
+      case 'energy_weapons':
+        return this.skills.energyWeapons.rank;
+      case 'explosives':
+        return this.skills.explosives.rank;
+      case 'lockpick':
+        return this.skills.lockpick.rank;
+      case 'medicine':
+        return this.skills.medicine.rank;
+      case 'meleeWeapons':
+      case 'melee_weapons':
+        return this.skills.meleeWeapons.rank;
+      case 'pilot':
+        return this.skills.pilot.rank;
+      case 'repair':
+        return this.skills.repair.rank;
+      case 'science':
+        return this.skills.science.rank;
+      case 'smallGuns':
+      case 'small_guns':
+        return this.skills.smallGuns.rank;
+      case 'sneak':
+        return this.skills.sneak.rank;
+      case 'speech':
+        return this.skills.speech.rank;
+      case 'survival':
+        return this.skills.survival.rank;
+      case 'throwing':
+        return this.skills.throwing.rank;
+      case 'unarmed':
+        return this.skills.unarmed.rank;
+    }
+  }
 }

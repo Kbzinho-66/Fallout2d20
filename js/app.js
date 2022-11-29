@@ -29,6 +29,17 @@ char.getApparel().then(() => {
   renderApparel();
 })
 
+const selects = document.getElementsByClassName('attr_select');
+for (const select of selects) {
+  select.onchange = (event) => {
+    const t       = event.target;
+    const text    = t.value;
+    const id      = t.id;
+    t.className   = t.className.replace(/(str|per|end|cha|int|agi|lck)/, text);
+    updateSingleSkill(id, text);
+  }
+}
+
 /******************************* FUNÇÕES DE RENDERIZAÇÃO *******************************/
 function renderBasicStats() {
   document.getElementById('character_name').innerHTML = char.name;
@@ -75,6 +86,7 @@ function renderSpecialStats() {
 }
 
 function renderSkills() {
+  //TODO Tem que trazer o atributo default do banco de dados e setar a classe aqui...
   for (const camel of Object.keys(char.skills)) {
     //  No objeto, as chaves tão em camelCase, mas precisa em snake_case pra acessar o HTML
     const snake = camelToSnake(camel);
@@ -88,13 +100,13 @@ function renderSkills() {
 function renderWeapons() {
   if (char.weapons.length) {
     const weaponAttributes = {
-      'Melee Weapons': {short: 'str', full: 'strength', skill: 'meleeWeapons'},
-      'Small Guns': {short: 'agi', full: 'agility', skill: 'smallGuns'},
-      'Big Guns': {short: 'end', full: 'endurance', skill: 'bigGuns'},
+      'Melee Weapons' : {short: 'str', full: 'strength'  , skill: 'meleeWeapons'},
+      'Small Guns'    : {short: 'agi', full: 'agility'   , skill: 'smallGuns'},
+      'Big Guns'      : {short: 'end', full: 'endurance' , skill: 'bigGuns'},
       'Energy Weapons': {short: 'per', full: 'perception', skill: 'energyWeapons'},
-      'Explosives': {short: 'per', full: 'perception', skill: 'explosives'},
-      'Throwing': {short: 'agi', full: 'agility', skill: 'throwing'},
-      'Unarmed': {short: 'str', full: 'strength', skill: 'unarmed'},
+      'Explosives'    : {short: 'per', full: 'perception', skill: 'explosives'},
+      'Throwing'      : {short: 'agi', full: 'agility'   , skill: 'throwing'},
+      'Unarmed'       : {short: 'str', full: 'strength'  , skill: 'unarmed'},
     };
 
     const table = document.getElementById('weapon_list').getElementsByTagName('tbody')[0];
@@ -103,14 +115,17 @@ function renderWeapons() {
       newRow.classList.add('item_row');
       let value;
 
+      const weaponType   = weapon['weapon_type'];
+      const shortStat    = weaponAttributes[weaponType].short;
+      const completeStat = weaponAttributes[weaponType].full;
+      const skill        = weaponAttributes[weaponType].skill;
+
       const nameCell = newRow.insertCell();
       nameCell.classList.add('table_text');
       value = document.createTextNode(weapon['weapon_name']);
       nameCell.appendChild(value);
 
       const attrCell = newRow.insertCell();
-      const weaponType = weapon['weapon_type'];
-      const shortStat = weaponAttributes[weaponType].short;
       const attrSpan = document.createElement('span');
       attrSpan.classList.add('badge', `${shortStat}_attr`, 'rounded-pill');
       attrSpan.innerHTML = shortStat.toUpperCase();
@@ -118,9 +133,7 @@ function renderWeapons() {
 
       const targetCell = newRow.insertCell();
       targetCell.classList.add('table_text');
-      const completeStat = weaponAttributes[weaponType].full;
-      const skill = weaponAttributes[weaponType].skill;
-      const target = char.special[completeStat] + char.skills[skill].rank;
+      const target = char.getSpecialAttribute(completeStat) + char.skills[skill].rank;
       value = document.createTextNode(target);
       targetCell.appendChild(value);
 
@@ -223,23 +236,23 @@ function renderApparel() {
 /********************************* FUNÇÕES DE UTILIDADE *********************************/
 //  Percorre cada uma das habilidades e soma o rank com o bônus de SPECIAL selecionado
 function updateSkillsTarget() {
-  const names = {
-    str: 'strength',
-    per: 'perception',
-    end: 'endurance',
-    cha: 'charisma',
-    int: 'intelligence',
-    agi: 'agility',
-    lck: 'luck'
-  };
-
   for (const camel of Object.keys(char.skills)) {
     const snake = camelToSnake(camel);
 
-    const selectedSpecial = names[document.getElementById(`${snake}_selected`).value];
-    const skillTarget = char.skills[camel].rank + char.special[selectedSpecial];
+    const selectedSpecial = document.getElementById(`${snake}_selected`).value;
+    const specialAttr = char.getSpecialAttribute(selectedSpecial);
+    const skillTarget = char.skills[camel].rank + specialAttr;
     document.getElementById(`${snake}_target`).innerHTML = skillTarget;
   }
+}
+
+function updateSingleSkill(skill_id, special) {
+  const selectedSkill = skill_id.slice(0, skill_id.indexOf('_selected'));
+  const skillRank = char.getSkillRank(selectedSkill);
+  const specialAttr = char.getSpecialAttribute(special);
+
+  document.getElementById(`${selectedSkill}_special_bonus`).innerHTML = specialAttr;
+  document.getElementById(`${selectedSkill}_target`).innerHTML = skillRank + specialAttr;
 }
 
 function camelToSnake(name) {
