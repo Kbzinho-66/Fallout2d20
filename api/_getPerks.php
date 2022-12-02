@@ -16,4 +16,6 @@ while($perk = $res->fetch_assoc()) {
     $perks[] = $perk;
 }
 
+mysqli_close($conn);
+
 exit(json_encode($perks));

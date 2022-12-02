@@ -17,4 +17,6 @@ while($weapon = $res->fetch_assoc()) {
     $weapons[] = $weapon;
 }
 
+mysqli_close($conn);
+
 exit(json_encode($weapons));

@@ -40,6 +40,22 @@ for (const select of selects) {
   }
 }
 
+document.getElementById('current_xp').onchange = event => {
+  const currXp = event.target.value;
+  void char.updateXP(currXp);
+  if (currXp >= char.xp.max) {
+    document.getElementById('level_up_link').classList.remove('d-none');
+  } else {
+    document.getElementById('level_up_link').classList.add('d-none')
+  }
+}
+
+// TODO No caso de AP, LP e HP, enviar pro banco de dados depois de uns segundos.
+//https://www.freecodecamp.org/portuguese/news/debounce-como-atrasar-a-execucao-de-uma-funcao-em-javascript-exemplo-com-js-es6/
+document.getElementById('current_ap').onchange = debounce( event => char.update('ap', event.target.value) );
+document.getElementById('current_lp').onchange = debounce( event => char.update('lp', event.target.value) );
+document.getElementById('current_hp').onchange = debounce( event => char.update('hp', event.target.value) );
+
 /******************************* FUNÇÕES DE RENDERIZAÇÃO *******************************/
 function renderBasicStats() {
   document.getElementById('character_name').innerHTML = char.name;
@@ -233,6 +249,7 @@ function renderApparel() {
   }
 }
 
+
 /********************************* FUNÇÕES DE UTILIDADE *********************************/
 //  Percorre cada uma das habilidades e soma o rank com o bônus de SPECIAL selecionado
 function updateSkillsTarget() {
@@ -260,4 +277,12 @@ function camelToSnake(name) {
       /[A-Z]/g,
       char => `_${char.toLowerCase()}`
   );
+}
+
+function debounce(func, timeout = 3000) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { func.apply(this, args); }, timeout);
+  };
 }

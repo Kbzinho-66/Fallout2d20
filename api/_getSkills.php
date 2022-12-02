@@ -25,4 +25,6 @@ foreach($skills as $name => $rank) {
     $info[$name] = $arr;
 }
 
+mysqli_close($conn);
+
 exit(json_encode($info));

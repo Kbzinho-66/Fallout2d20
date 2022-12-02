@@ -12,4 +12,6 @@ $stmt->execute();
 $result = $stmt->get_result();
 $info   = $result->fetch_assoc();
 
+mysqli_close($conn);
+
 exit(json_encode($info));

@@ -56,7 +56,6 @@ h1 {
     text-align: center;
 }
 
-/* Por enquanto é igual, mudar depois */
 .table_region {
     border-radius: 5px;
     background-color: #FCE8A4;
@@ -257,4 +256,10 @@ h1 {
 .perk_description {
     text-align: justify;
     max-height: 10rem;
+}
+
+#level_up_link {
+    font-family: Monofont, monospace;
+    font-size: 1.2em;
+    color: #325886;
 }

@@ -344,4 +344,64 @@ export default class Character {
         return this.skills.unarmed.rank;
     }
   }
+
+  async updateXP(xp) {
+    this.xp.current = xp;
+    this.currentLevel = this.xp.current > this.xp.max ? this.currentLevel + 1 : this.currentLevel;
+
+    const data = {
+      id: this.id,
+      xp: xp,
+      lvl: this.currentLevel
+    };
+
+    const url = 'api/_updateXP.php'
+    const conf = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/formData'
+      },
+      body: JSON.stringify(data),
+    }
+
+    try {
+      const res = await fetch(url, conf);
+
+      if (!res.ok) {
+        console.error(res);
+      }
+
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  async update(stat, value) {
+    this[stat].current = value;
+
+    const data = {
+      id: this.id,
+      [stat]: value
+    };
+
+    const url = `api/_updateGeneral.php`
+    const conf = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/formData'
+      },
+      body: JSON.stringify(data),
+    }
+
+    try {
+      const res = await fetch(url, conf);
+
+      if (!res.ok) {
+        console.error(res);
+      }
+
+    } catch (e) {
+      console.error(e)
+    }
+  }
 }

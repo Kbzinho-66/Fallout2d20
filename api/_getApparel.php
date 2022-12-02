@@ -17,4 +17,6 @@ while($piece = $res->fetch_assoc()) {
     $apparel[] = $piece;
 }
 
+mysqli_close($conn);
+
 exit(json_encode($apparel));
