@@ -95,547 +95,496 @@
 
   <div class="row g-3 my-1">
 
-    <div class="col-sm-3">
-
+    <div class="col-lg-3">
       <!-- Atributos Principais -->
-      <div class="row g-3">
-        <div class="col">
-          <div class="row mx-auto text-center">
-            <div class="col special_header str_attr">S</div>
-            <div class="col special_header per_attr">P</div>
-            <div class="col special_header end_attr">E</div>
-            <div class="col special_header cha_attr">C</div>
-            <div class="col special_header int_attr">I</div>
-            <div class="col special_header agi_attr">A</div>
-            <div class="col special_header lck_attr">L</div>
-          </div>
-          <div class="row mx-auto text-center">
-            <div class="col special_stat str_attr" id="str_value">-1</div>
-            <div class="col special_stat per_attr" id="per_value">-1</div>
-            <div class="col special_stat end_attr" id="end_value">-1</div>
-            <div class="col special_stat cha_attr" id="cha_value">-1</div>
-            <div class="col special_stat int_attr" id="int_value">-1</div>
-            <div class="col special_stat agi_attr" id="agi_value">-1</div>
-            <div class="col special_stat lck_attr" id="lck_value">-1</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Perks -->
-      <div class="row">
+      <div class="col">
         <div class="row mx-auto text-center">
-          <div class="row mx-auto my-3 py-3 section d-none" id="perk_list">
-            <div class="row">
-              <div class="col section_title">Perks</div>
+          <div class="col special_header str_attr">S</div>
+          <div class="col special_header per_attr">P</div>
+          <div class="col special_header end_attr">E</div>
+          <div class="col special_header cha_attr">C</div>
+          <div class="col special_header int_attr">I</div>
+          <div class="col special_header agi_attr">A</div>
+          <div class="col special_header lck_attr">L</div>
+        </div>
+        <div class="row mx-auto text-center">
+          <div class="col special_stat str_attr" id="str_value">-1</div>
+          <div class="col special_stat per_attr" id="per_value">-1</div>
+          <div class="col special_stat end_attr" id="end_value">-1</div>
+          <div class="col special_stat cha_attr" id="cha_value">-1</div>
+          <div class="col special_stat int_attr" id="int_value">-1</div>
+          <div class="col special_stat agi_attr" id="agi_value">-1</div>
+          <div class="col special_stat lck_attr" id="lck_value">-1</div>
+        </div>
+      </div>
+
+      <!-- Atributos Secundários -->
+      <div class="col-12 my-1">
+
+        <div class="section">
+          <div class="row justify-content-center py-1">
+            <label class="col-4 input_label" for="current_hp">Health Points</label>
+            <div class="col-1">
+              <input class="number_input digit_input" type="number" name="current_hp" id="current_hp" min="0"
+                     step="1" max="18" placeholder="18">
             </div>
+            <div class="col-1">/</div>
+            <div class="col-1 max_number" id="max_hp">18</div>
 
-            <div class="container g-3 perk_container">
-              <div class="perk_header">
-                <div class="row py-2">
-                  <div class="col-8 perk_name">Science!</div>
-                  <div class="col-4">
-                    <div class="btn-group btn-group-sm" role="group" aria-label="Perk rank">
-                      <input type="checkbox" class="btn-check perk_rank_checkbox" id="rank1" autocomplete="off"
-                             checked disabled>
-                      <label class="btn btn-outline-dark" for="rank1">1</label>
+            <div class="col-1"></div>
 
-                      <input type="checkbox" class="btn-check perk_rank_checkbox" id="rank2" autocomplete="off"
-                             disabled>
-                      <label class="btn btn-outline-dark" for="rank2">2</label>
+            <div class="col-2 input_label">Defense</div>
+            <div class="col-1 max_number" id="defense">1</div>
+          </div>
+        </div>
 
-                      <input type="checkbox" class="btn-check perk_rank_checkbox" id="rank3" autocomplete="off"
-                             disabled>
-                      <label class="btn btn-outline-dark" for="rank3">3</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row my-2">
-                <div class="col">
-                  <p class="perk_description">
-                    The difficulty of tests you attempt to hack computers is permanently decreased by 1.
-                  </p>
-                </div>
-              </div>
-            </div>
+        <div class="row section g-3 mx-auto my-1">
+          <div class="row">
+            <div class="col">Melee Damage</div>
+            <div class="col">Initiative</div>
+            <div class="col">Poison Resistance</div>
+          </div>
+          <div class="row">
+            <div class="col max_number" id="melee_dmg"></div>
+            <div class="col max_number" id="initiative"></div>
+            <div class="col max_number" id="poison_dr"></div>
+          </div>
+        </div>
 
+        <!-- Imagem do personagem -->
+        <div class="row">
+          <div>
+            <img class="bg-transparent rounded mx-auto d-block" src="res/Hack_the_Mojave.webp"
+                 alt="Imagem do Personagem">
           </div>
         </div>
       </div>
 
-      <!-- Imagem do personagem -->
-      <div class="row">
-        <div>
-          <img class="bg-transparent rounded mx-auto d-block" src="res/Hack_the_Mojave.webp"
-               alt="Imagem do Personagem">
-        </div>
-      </div>
     </div>
 
     <div class="col-5">
-      <div>
-
-        <!-- Tabela de Skills -->
-        <table class="table_region" id="skills_table">
-          <tr class="table_header">
-            <th colspan="8" class="section_title">Skills</th>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label="Tagged Skill"
-                     id="athletics_tagged" disabled>
-            </td>
-            <th class="skill_name">Athletics</th>
-            <td class="attr_number" id="athletics_rank">3</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline str_attr attr_select"
-                      aria-label="Seleção de atributo" id="athletics_selected"
-                      onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" selected value="str">STR</option>
-                <option class="attr_option" value="per">PER</option>
-                <option class="attr_option" value="end">END</option>
-                <option class="attr_option" value="cha">CHA</option>
-                <option class="attr_option" value="int">INT</option>
-                <option class="attr_option" value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number str_bonus" id="athletics_special_bonus">-1</td>
-            <td>=</td>
-            <td class="attr_number" id="athletics_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label id="barter_tagged" disabled>
-            </td>
-            <th class="skill_name">Barter</th>
-            <td class="attr_number" id="barter_rank">2</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline cha_attr attr_select"
-                      aria-label="Seleção de atributo" id="barter_selected"
-                      onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" value="str">STR</option>
-                <option class="attr_option" value="per">PER</option>
-                <option class="attr_option" value="end">END</option>
-                <option class="attr_option" selected value="cha">CHA</option>
-                <option class="attr_option" value="int">INT</option>
-                <option class="attr_option" value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number cha_bonus" id="barter_special_bonus">9</td>
-            <td>=</td>
-            <td class="attr_number" id="barter_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label id="big_guns_tagged" disabled>
-            </td>
-            <th class="skill_name">Big Guns</th>
-            <td class="attr_number" id="big_guns_rank">1</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline end_attr attr_select"
-                      aria-label="Seleção de atributo" id="big_guns_selected"
-                      onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" value="str">STR</option>
-                <option class="attr_option" value="per">PER</option>
-                <option class="attr_option" selected value="end">END</option>
-                <option class="attr_option" value="cha">CHA</option>
-                <option class="attr_option" value="int">INT</option>
-                <option class="attr_option" value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number end_bonus" id="big_guns_special_bonus">8</td>
-            <td>=</td>
-            <td class="attr_number" id="big_guns_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label id="energy_weapons_tagged"
-                     disabled checked>
-            </td>
-            <th class="skill_name">Energy Weapons</th>
-            <td class="attr_number" id="energy_weapons_rank">5</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline per_attr attr_select"
-                      aria-label="Seleção de atributo" id="energy_weapons_selected"
-                      onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" value="str">STR</option>
-                <option class="attr_option" selected value="per">PER</option>
-                <option class="attr_option" value="end">END</option>
-                <option class="attr_option" value="cha">CHA</option>
-                <option class="attr_option" value="int">INT</option>
-                <option class="attr_option" value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number per_bonus" id="energy_weapons_special_bonus">8</td>
-            <td>=</td>
-            <td class="attr_number" id="energy_weapons_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label id="explosives_tagged" disabled>
-            </td>
-            <th class="skill_name">Explosives</th>
-            <td class="attr_number" id="explosives_rank">1</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline per_attr attr_select"
-                      aria-label="Seleção de atributo" id="explosives_selected"
-                      onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" value="str">STR</option>
-                <option class="attr_option" selected value="per">PER</option>
-                <option class="attr_option" value="end">END</option>
-                <option class="attr_option" value="cha">CHA</option>
-                <option class="attr_option" value="int">INT</option>
-                <option class="attr_option" value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number per_bonus" id="explosives_special_bonus">8</td>
-            <td>=</td>
-            <td class="attr_number" id="explosives_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label id="lockpick_tagged" disabled>
-            </td>
-            <th class="skill_name">Lockpick</th>
-            <td class="attr_number" id="lockpick_rank">1</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline per_attr attr_select"
-                      aria-label="Seleção de atributo" id="lockpick_selected"
-                      onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" value="str">STR</option>
-                <option class="attr_option" selected value="per">PER</option>
-                <option class="attr_option" value="end">END</option>
-                <option class="attr_option" value="cha">CHA</option>
-                <option class="attr_option" value="int">INT</option>
-                <option class="attr_option" value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number per_bonus" id="lockpick_special_bonus">8</td>
-            <td>=</td>
-            <td class="attr_number" id="lockpick_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label id="medicine_tagged" disabled
-                     checked>
-            </td>
-            <th class="skill_name">Medicine</th>
-            <td class="attr_number" id="medicine_rank">5</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline int_attr attr_select"
-                      aria-label="Seleção de atributo" id="medicine_selected"
-                      onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" value="str">STR</option>
-                <option class="attr_option" value="per">PER</option>
-                <option class="attr_option" value="end">END</option>
-                <option class="attr_option" value="cha">CHA</option>
-                <option class="attr_option" selected value="int">INT</option>
-                <option class="attr_option" value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number int_bonus" id="medicine_special_bonus">5</td>
-            <td>=</td>
-            <td class="attr_number" id="medicine_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label id="melee_weapons_tagged"
-                     disabled>
-            </td>
-            <th class="skill_name">Melee Weapons</th>
-            <td class="attr_number" id="melee_weapons_rank">1</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline str_attr attr_select"
-                      aria-label="Seleção de atributo" id="melee_weapons_selected"
-                      onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" selected value="str">STR</option>
-                <option class="attr_option" value="per">PER</option>
-                <option class="attr_option" value="end">END</option>
-                <option class="attr_option" value="cha">CHA</option>
-                <option class="attr_option" value="int">INT</option>
-                <option class="attr_option" value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number str_bonus" id="melee_weapons_special_bonus">7</td>
-            <td>=</td>
-            <td class="attr_number" id="melee_weapons_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label id="pilot_tagged" disabled>
-            </td>
-            <th class="skill_name">Pilot</th>
-            <td class="attr_number" id="pilot_rank">1</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline per_attr attr_select"
-                      aria-label="Seleção de atributo" id="pilot_selected" onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" value="str">STR</option>
-                <option class="attr_option" selected value="per">PER</option>
-                <option class="attr_option" value="end">END</option>
-                <option class="attr_option" value="cha">CHA</option>
-                <option class="attr_option" value="int">INT</option>
-                <option class="attr_option" value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number per_bonus" id="pilot_special_bonus">8</td>
-            <td>=</td>
-            <td class="attr_number" id="pilot_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label id="repair_tagged" disabled>
-            </td>
-            <th class="skill_name">Repair</th>
-            <td class="attr_number" id="repair_rank">1</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline int_attr attr_select"
-                      aria-label="Seleção de atributo" id="repair_selected"
-                      onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" value="str">STR</option>
-                <option class="attr_option" value="per">PER</option>
-                <option class="attr_option" value="end">END</option>
-                <option class="attr_option" value="cha">CHA</option>
-                <option class="attr_option" selected value="int">INT</option>
-                <option class="attr_option" value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number int_bonus" id="repair_special_bonus">5</td>
-            <td>=</td>
-            <td class="attr_number" id="repair_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label disabled id="science_tagged"
-                     checked>
-            </td>
-            <th class="skill_name">Science</th>
-            <td class="attr_number" id="science_rank">5</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline int_attr attr_select"
-                      aria-label="Seleção de atributo" id="science_selected"
-                      onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" value="str">STR</option>
-                <option class="attr_option" value="per">PER</option>
-                <option class="attr_option" value="end">END</option>
-                <option class="attr_option" value="cha">CHA</option>
-                <option class="attr_option" selected value="int">INT</option>
-                <option class="attr_option" value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number int_bonus" id="science_special_bonus">5</td>
-            <td>=</td>
-            <td class="attr_number" id="science_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label id="small_guns_tagged" disabled>
-            </td>
-            <th class="skill_name">Small Guns</th>
-            <td class="attr_number" id="small_guns_rank">1</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline agi_attr attr_select"
-                      aria-label="Seleção de atributo" id="small_guns_selected"
-                      onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" value="str">STR</option>
-                <option class="attr_option" value="per">PER</option>
-                <option class="attr_option" value="end">END</option>
-                <option class="attr_option" value="cha">CHA</option>
-                <option class="attr_option" value="int">INT</option>
-                <option class="attr_option" selected value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number agi_bonus" id="small_guns_special_bonus">7</td>
-            <td>=</td>
-            <td class="attr_number" id="small_guns_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label id="sneak_tagged" disabled>
-            </td>
-            <th class="skill_name">Sneak</th>
-            <td class="attr_number" id="sneak_rank">1</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline agi_attr attr_select"
-                      aria-label="Seleção de atributo" id="sneak_selected" onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" value="str">STR</option>
-                <option class="attr_option" value="per">PER</option>
-                <option class="attr_option" value="end">END</option>
-                <option class="attr_option" value="cha">CHA</option>
-                <option class="attr_option" value="int">INT</option>
-                <option class="attr_option" selected value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number agi_bonus" id="sneak_special_bonus">7</td>
-            <td>=</td>
-            <td class="attr_number" id="sneak_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label id="speech_tagged" disabled>
-            </td>
-            <th class="skill_name">Speech</th>
-            <td class="attr_number" id="speech_rank">2</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline cha_attr attr_select"
-                      aria-label="Seleção de atributo" id="speech_selected"
-                      onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" value="str">STR</option>
-                <option class="attr_option" value="per">PER</option>
-                <option class="attr_option" value="end">END</option>
-                <option class="attr_option" selected value="cha">CHA</option>
-                <option class="attr_option" value="int">INT</option>
-                <option class="attr_option" value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number cha_bonus" id="speech_special_bonus">9</td>
-            <td>=</td>
-            <td class="attr_number" id="speech_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label id="survival_tagged" disabled>
-            </td>
-            <th class="skill_name">Survival</th>
-            <td class="attr_number" id="survival_rank">3</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline end_attr attr_select"
-                      aria-label="Seleção de atributo" id="survival_selected"
-                      onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" value="str">STR</option>
-                <option class="attr_option" value="per">PER</option>
-                <option class="attr_option" selected value="end">END</option>
-                <option class="attr_option" value="cha">CHA</option>
-                <option class="attr_option" value="int">INT</option>
-                <option class="attr_option" value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number end_bonus" id="survival_special_bonus">8</td>
-            <td>=</td>
-            <td class="attr_number" id="survival_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label id="throwing_tagged" disabled>
-            </td>
-            <th class="skill_name">Throwing</th>
-            <td class="attr_number" id="throwing_rank">1</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline agi_attr attr_select"
-                      aria-label="Seleção de atributo" id="throwing_selected"
-                      onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" value="str">STR</option>
-                <option class="attr_option" value="per">PER</option>
-                <option class="attr_option" value="end">END</option>
-                <option class="attr_option" value="cha">CHA</option>
-                <option class="attr_option" value="int">INT</option>
-                <option class="attr_option" selected value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number agi_bonus" id="throwing_special_bonus">7</td>
-            <td>=</td>
-            <td class="attr_number" id="throwing_target">-1</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" class="form-check-input tagged_skill" aria-label id="unarmed_tagged" disabled>
-            </td>
-            <th class="skill_name">Unarmed</th>
-            <td class="attr_number" id="unarmed_rank">1</td>
-            <td>+</td>
-            <td>
-              <select class="form-select form-select-sm w-auto d-inline str_attr attr_select"
-                      aria-label="Seleção de atributo" id="unarmed_selected"
-                      onchange="this.dataset.chosen = this.value;">
-                <option class="attr_option" selected value="str">STR</option>
-                <option class="attr_option" value="per">PER</option>
-                <option class="attr_option" value="end">END</option>
-                <option class="attr_option" value="cha">CHA</option>
-                <option class="attr_option" value="int">INT</option>
-                <option class="attr_option" value="agi">AGI</option>
-                <option class="attr_option" value="lck">LCK</option>
-              </select>
-            </td>
-            <td class="attr_number str_bonus" id="unarmed_special_bonus">7</td>
-            <td>=</td>
-            <td class="attr_number" id="unarmed_target">-1</td>
-          </tr>
-        </table>
-      </div>
+      <!-- Tabela de Skills -->
+      <table class="table_region" id="skills_table">
+        <tr class="table_header">
+          <th colspan="8" class="section_title">Skills</th>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label="Tagged Skill"
+                   id="athletics_tagged" disabled>
+          </td>
+          <th class="skill_name">Athletics</th>
+          <td class="attr_number" id="athletics_rank">3</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline str_attr attr_select"
+                    aria-label="Seleção de atributo" id="athletics_selected"
+                    onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" selected value="str">STR</option>
+              <option class="attr_option" value="per">PER</option>
+              <option class="attr_option" value="end">END</option>
+              <option class="attr_option" value="cha">CHA</option>
+              <option class="attr_option" value="int">INT</option>
+              <option class="attr_option" value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number str_bonus" id="athletics_special_bonus">-1</td>
+          <td>=</td>
+          <td class="attr_number" id="athletics_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label id="barter_tagged" disabled>
+          </td>
+          <th class="skill_name">Barter</th>
+          <td class="attr_number" id="barter_rank">2</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline cha_attr attr_select"
+                    aria-label="Seleção de atributo" id="barter_selected"
+                    onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" value="str">STR</option>
+              <option class="attr_option" value="per">PER</option>
+              <option class="attr_option" value="end">END</option>
+              <option class="attr_option" selected value="cha">CHA</option>
+              <option class="attr_option" value="int">INT</option>
+              <option class="attr_option" value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number cha_bonus" id="barter_special_bonus">9</td>
+          <td>=</td>
+          <td class="attr_number" id="barter_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label id="big_guns_tagged" disabled>
+          </td>
+          <th class="skill_name">Big Guns</th>
+          <td class="attr_number" id="big_guns_rank">1</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline end_attr attr_select"
+                    aria-label="Seleção de atributo" id="big_guns_selected"
+                    onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" value="str">STR</option>
+              <option class="attr_option" value="per">PER</option>
+              <option class="attr_option" selected value="end">END</option>
+              <option class="attr_option" value="cha">CHA</option>
+              <option class="attr_option" value="int">INT</option>
+              <option class="attr_option" value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number end_bonus" id="big_guns_special_bonus">8</td>
+          <td>=</td>
+          <td class="attr_number" id="big_guns_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label id="energy_weapons_tagged"
+                   disabled checked>
+          </td>
+          <th class="skill_name">Energy Weapons</th>
+          <td class="attr_number" id="energy_weapons_rank">5</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline per_attr attr_select"
+                    aria-label="Seleção de atributo" id="energy_weapons_selected"
+                    onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" value="str">STR</option>
+              <option class="attr_option" selected value="per">PER</option>
+              <option class="attr_option" value="end">END</option>
+              <option class="attr_option" value="cha">CHA</option>
+              <option class="attr_option" value="int">INT</option>
+              <option class="attr_option" value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number per_bonus" id="energy_weapons_special_bonus">8</td>
+          <td>=</td>
+          <td class="attr_number" id="energy_weapons_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label id="explosives_tagged" disabled>
+          </td>
+          <th class="skill_name">Explosives</th>
+          <td class="attr_number" id="explosives_rank">1</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline per_attr attr_select"
+                    aria-label="Seleção de atributo" id="explosives_selected"
+                    onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" value="str">STR</option>
+              <option class="attr_option" selected value="per">PER</option>
+              <option class="attr_option" value="end">END</option>
+              <option class="attr_option" value="cha">CHA</option>
+              <option class="attr_option" value="int">INT</option>
+              <option class="attr_option" value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number per_bonus" id="explosives_special_bonus">8</td>
+          <td>=</td>
+          <td class="attr_number" id="explosives_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label id="lockpick_tagged" disabled>
+          </td>
+          <th class="skill_name">Lockpick</th>
+          <td class="attr_number" id="lockpick_rank">1</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline per_attr attr_select"
+                    aria-label="Seleção de atributo" id="lockpick_selected"
+                    onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" value="str">STR</option>
+              <option class="attr_option" selected value="per">PER</option>
+              <option class="attr_option" value="end">END</option>
+              <option class="attr_option" value="cha">CHA</option>
+              <option class="attr_option" value="int">INT</option>
+              <option class="attr_option" value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number per_bonus" id="lockpick_special_bonus">8</td>
+          <td>=</td>
+          <td class="attr_number" id="lockpick_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label id="medicine_tagged" disabled
+                   checked>
+          </td>
+          <th class="skill_name">Medicine</th>
+          <td class="attr_number" id="medicine_rank">5</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline int_attr attr_select"
+                    aria-label="Seleção de atributo" id="medicine_selected"
+                    onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" value="str">STR</option>
+              <option class="attr_option" value="per">PER</option>
+              <option class="attr_option" value="end">END</option>
+              <option class="attr_option" value="cha">CHA</option>
+              <option class="attr_option" selected value="int">INT</option>
+              <option class="attr_option" value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number int_bonus" id="medicine_special_bonus">5</td>
+          <td>=</td>
+          <td class="attr_number" id="medicine_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label id="melee_weapons_tagged"
+                   disabled>
+          </td>
+          <th class="skill_name">Melee Weapons</th>
+          <td class="attr_number" id="melee_weapons_rank">1</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline str_attr attr_select"
+                    aria-label="Seleção de atributo" id="melee_weapons_selected"
+                    onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" selected value="str">STR</option>
+              <option class="attr_option" value="per">PER</option>
+              <option class="attr_option" value="end">END</option>
+              <option class="attr_option" value="cha">CHA</option>
+              <option class="attr_option" value="int">INT</option>
+              <option class="attr_option" value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number str_bonus" id="melee_weapons_special_bonus">7</td>
+          <td>=</td>
+          <td class="attr_number" id="melee_weapons_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label id="pilot_tagged" disabled>
+          </td>
+          <th class="skill_name">Pilot</th>
+          <td class="attr_number" id="pilot_rank">1</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline per_attr attr_select"
+                    aria-label="Seleção de atributo" id="pilot_selected" onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" value="str">STR</option>
+              <option class="attr_option" selected value="per">PER</option>
+              <option class="attr_option" value="end">END</option>
+              <option class="attr_option" value="cha">CHA</option>
+              <option class="attr_option" value="int">INT</option>
+              <option class="attr_option" value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number per_bonus" id="pilot_special_bonus">8</td>
+          <td>=</td>
+          <td class="attr_number" id="pilot_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label id="repair_tagged" disabled>
+          </td>
+          <th class="skill_name">Repair</th>
+          <td class="attr_number" id="repair_rank">1</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline int_attr attr_select"
+                    aria-label="Seleção de atributo" id="repair_selected"
+                    onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" value="str">STR</option>
+              <option class="attr_option" value="per">PER</option>
+              <option class="attr_option" value="end">END</option>
+              <option class="attr_option" value="cha">CHA</option>
+              <option class="attr_option" selected value="int">INT</option>
+              <option class="attr_option" value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number int_bonus" id="repair_special_bonus">5</td>
+          <td>=</td>
+          <td class="attr_number" id="repair_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label disabled id="science_tagged"
+                   checked>
+          </td>
+          <th class="skill_name">Science</th>
+          <td class="attr_number" id="science_rank">5</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline int_attr attr_select"
+                    aria-label="Seleção de atributo" id="science_selected"
+                    onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" value="str">STR</option>
+              <option class="attr_option" value="per">PER</option>
+              <option class="attr_option" value="end">END</option>
+              <option class="attr_option" value="cha">CHA</option>
+              <option class="attr_option" selected value="int">INT</option>
+              <option class="attr_option" value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number int_bonus" id="science_special_bonus">5</td>
+          <td>=</td>
+          <td class="attr_number" id="science_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label id="small_guns_tagged" disabled>
+          </td>
+          <th class="skill_name">Small Guns</th>
+          <td class="attr_number" id="small_guns_rank">1</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline agi_attr attr_select"
+                    aria-label="Seleção de atributo" id="small_guns_selected"
+                    onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" value="str">STR</option>
+              <option class="attr_option" value="per">PER</option>
+              <option class="attr_option" value="end">END</option>
+              <option class="attr_option" value="cha">CHA</option>
+              <option class="attr_option" value="int">INT</option>
+              <option class="attr_option" selected value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number agi_bonus" id="small_guns_special_bonus">7</td>
+          <td>=</td>
+          <td class="attr_number" id="small_guns_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label id="sneak_tagged" disabled>
+          </td>
+          <th class="skill_name">Sneak</th>
+          <td class="attr_number" id="sneak_rank">1</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline agi_attr attr_select"
+                    aria-label="Seleção de atributo" id="sneak_selected" onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" value="str">STR</option>
+              <option class="attr_option" value="per">PER</option>
+              <option class="attr_option" value="end">END</option>
+              <option class="attr_option" value="cha">CHA</option>
+              <option class="attr_option" value="int">INT</option>
+              <option class="attr_option" selected value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number agi_bonus" id="sneak_special_bonus">7</td>
+          <td>=</td>
+          <td class="attr_number" id="sneak_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label id="speech_tagged" disabled>
+          </td>
+          <th class="skill_name">Speech</th>
+          <td class="attr_number" id="speech_rank">2</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline cha_attr attr_select"
+                    aria-label="Seleção de atributo" id="speech_selected"
+                    onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" value="str">STR</option>
+              <option class="attr_option" value="per">PER</option>
+              <option class="attr_option" value="end">END</option>
+              <option class="attr_option" selected value="cha">CHA</option>
+              <option class="attr_option" value="int">INT</option>
+              <option class="attr_option" value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number cha_bonus" id="speech_special_bonus">9</td>
+          <td>=</td>
+          <td class="attr_number" id="speech_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label id="survival_tagged" disabled>
+          </td>
+          <th class="skill_name">Survival</th>
+          <td class="attr_number" id="survival_rank">3</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline end_attr attr_select"
+                    aria-label="Seleção de atributo" id="survival_selected"
+                    onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" value="str">STR</option>
+              <option class="attr_option" value="per">PER</option>
+              <option class="attr_option" selected value="end">END</option>
+              <option class="attr_option" value="cha">CHA</option>
+              <option class="attr_option" value="int">INT</option>
+              <option class="attr_option" value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number end_bonus" id="survival_special_bonus">8</td>
+          <td>=</td>
+          <td class="attr_number" id="survival_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label id="throwing_tagged" disabled>
+          </td>
+          <th class="skill_name">Throwing</th>
+          <td class="attr_number" id="throwing_rank">1</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline agi_attr attr_select"
+                    aria-label="Seleção de atributo" id="throwing_selected"
+                    onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" value="str">STR</option>
+              <option class="attr_option" value="per">PER</option>
+              <option class="attr_option" value="end">END</option>
+              <option class="attr_option" value="cha">CHA</option>
+              <option class="attr_option" value="int">INT</option>
+              <option class="attr_option" selected value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number agi_bonus" id="throwing_special_bonus">7</td>
+          <td>=</td>
+          <td class="attr_number" id="throwing_target">-1</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="form-check-input tagged_skill" aria-label id="unarmed_tagged" disabled>
+          </td>
+          <th class="skill_name">Unarmed</th>
+          <td class="attr_number" id="unarmed_rank">1</td>
+          <td>+</td>
+          <td>
+            <select class="form-select form-select-sm w-auto d-inline str_attr attr_select"
+                    aria-label="Seleção de atributo" id="unarmed_selected"
+                    onchange="this.dataset.chosen = this.value;">
+              <option class="attr_option" selected value="str">STR</option>
+              <option class="attr_option" value="per">PER</option>
+              <option class="attr_option" value="end">END</option>
+              <option class="attr_option" value="cha">CHA</option>
+              <option class="attr_option" value="int">INT</option>
+              <option class="attr_option" value="agi">AGI</option>
+              <option class="attr_option" value="lck">LCK</option>
+            </select>
+          </td>
+          <td class="attr_number str_bonus" id="unarmed_special_bonus">7</td>
+          <td>=</td>
+          <td class="attr_number" id="unarmed_target">-1</td>
+        </tr>
+      </table>
     </div>
 
     <div class="col-4">
-
-      <!-- Atributos Secundários -->
-      <div class="row g-3">
-        <div class="col-12">
-
-          <div class="section">
-            <div class="row justify-content-center py-1">
-              <label class="col-3 input_label" for="current_hp">Health Points</label>
-              <div class="col-2">
-                <input class="number_input digit_input" type="number" name="current_hp" id="current_hp" min="0"
-                       step="1" max="18" placeholder="18">
-              </div>
-              <div class="col-1">/</div>
-              <div class="col-2 max_number" id="max_hp">18</div>
-
-              <div class="col-1"></div>
-
-              <div class="col-1 input_label">Defense</div>
-              <div class="col-2 max_number" id="defense">1</div>
-            </div>
-          </div>
-
-          <div class="row section g-3 mx-auto my-1">
-            <div class="row">
-              <div class="col">Melee Damage</div>
-              <div class="col">Initiative</div>
-              <div class="col">Poison Resistance</div>
-            </div>
-            <div class="row">
-              <div class="col max_number" id="melee_dmg"></div>
-              <div class="col max_number" id="initiative"></div>
-              <div class="col max_number" id="poison_dr"></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
       <!-- Estado dos Membros -->
-      <div class="row g-3 mx-auto my-1">
+      <div class="row g-3 mx-auto">
         <div class="section bg-image" id="body_stats">
           <div class="row my-3">
             <div class="container px-0 limb_table">
@@ -739,11 +688,55 @@
                 <div class="col-3 limb_table_value" id="right_leg_en_dr">0</div>
               </div>
             </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Perks -->
+      <div class="row">
+        <div class="row mx-auto text-center">
+          <div class="row mx-auto my-3 py-3 section" id="perk_list">
+            <div class="row">
+              <div class="col section_title">Perks</div>
+            </div>
+
+            <div class="container g-3 perk_container">
+              <div class="perk_header">
+                <div class="row py-2">
+                  <div class="col-8 perk_name">Science!</div>
+                  <div class="col-4">
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Perk rank">
+                      <input type="checkbox" class="btn-check perk_rank_checkbox" id="rank1" autocomplete="off"
+                             checked disabled>
+                      <label class="btn btn-outline-dark" for="rank1">1</label>
+
+                      <input type="checkbox" class="btn-check perk_rank_checkbox" id="rank2" autocomplete="off"
+                             disabled>
+                      <label class="btn btn-outline-dark" for="rank2">2</label>
+
+                      <input type="checkbox" class="btn-check perk_rank_checkbox" id="rank3" autocomplete="off"
+                             disabled>
+                      <label class="btn btn-outline-dark" for="rank3">3</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col">
+                  <p class="perk_description">
+                    The difficulty of tests you attempt to hack computers is permanently decreased by 1.
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 
   <div class="row g-3 my-1">
@@ -753,24 +746,24 @@
       <div class="section">
         <table class="table_region" id="weapon_list">
           <thead>
-            <tr>
-              <th class="table_header">Name</th>
-              <th class="table_header">Attr</th>
-              <th class="table_header">Target</th>
-              <th class="table_header">DMG Type</th>
-              <th class="table_header">DR</th>
-              <th class="table_header">Fire Rate</th>
-              <th class="table_header">Range</th>
-              <th class="table_header">Effects</th>
-              <th class="table_header">Qualities</th>
-            </tr>
+          <tr>
+            <th class="table_header">Name</th>
+            <th class="table_header">Attr</th>
+            <th class="table_header">Target</th>
+            <th class="table_header">DMG Type</th>
+            <th class="table_header">DR</th>
+            <th class="table_header">Fire Rate</th>
+            <th class="table_header">Range</th>
+            <th class="table_header">Effects</th>
+            <th class="table_header">Qualities</th>
+          </tr>
           </thead>
           <tbody>
           </tbody>
           <tfoot class="d-none">
-            <tr class="bg-info">
-              <th colspan="9">Botão pra adicionar mais armas</th>
-            </tr>
+          <tr class="bg-info">
+            <th colspan="9">Botão pra adicionar mais armas</th>
+          </tr>
           </tfoot>
         </table>
       </div>
@@ -781,27 +774,26 @@
       <div class="section">
         <table class="table_region" id="apparel_list">
           <thead>
-            <tr>
-              <th class="table_header">Item</th>
-              <th class="table_header">Physical DR</th>
-              <th class="table_header">Energy DR</th>
-              <th class="table_header">Radiation DR</th>
-              <th class="table_header">Locations Covered</th>
-            </tr>
+          <tr>
+            <th class="table_header">Item</th>
+            <th class="table_header">Physical DR</th>
+            <th class="table_header">Energy DR</th>
+            <th class="table_header">Radiation DR</th>
+            <th class="table_header">Locations Covered</th>
+          </tr>
           </thead>
           <tbody>
           </tbody>
           <tfoot class="d-none">
-            <tr class="bg-info">
-              <th>Botão pra adicionar outra armadura</th>
-            </tr>
+          <tr class="bg-info">
+            <th>Botão pra adicionar outra armadura</th>
+          </tr>
           </tfoot>
         </table>
       </div>
     </div>
 
   </div>
-
 </main>
 
 <footer>

@@ -1,7 +1,7 @@
 import Character from "./Character.js";
 
-// Obviamente, seria melhor pegar o id do banco de dados de alguma forma, mas não vai
-// dar tempo de implementar isso porque teria que fazer algo com usuário.
+// Obviamente, seria melhor pegar o id do banco de dados de alguma forma,
+// mas não vai dar tempo de implementar isso porque teria que fazer algo com usuário.
 const char = new Character(1);
 
 char.getCharacterInfo().then(() => {
@@ -29,6 +29,9 @@ char.getApparel().then(() => {
   renderApparel();
 })
 
+// TODO Teria que trazer a imagem do personagem do banco também. Isso se de fato vai ter imagem...
+
+// Preparar o select pra alterar o target da skill relevante
 const selects = document.getElementsByClassName('attr_select');
 for (const select of selects) {
   select.onchange = (event) => {
@@ -40,6 +43,7 @@ for (const select of selects) {
   }
 }
 
+// Colocar um controle de XP pra levar pra página de Level Up
 document.getElementById('current_xp').onchange = event => {
   const currXp = event.target.value;
   void char.updateXP(currXp);
@@ -50,8 +54,7 @@ document.getElementById('current_xp').onchange = event => {
   }
 }
 
-// TODO No caso de AP, LP e HP, enviar pro banco de dados depois de uns segundos.
-//https://www.freecodecamp.org/portuguese/news/debounce-como-atrasar-a-execucao-de-uma-funcao-em-javascript-exemplo-com-js-es6/
+// Mudanças de AP, LP e HP só devem ir pro banco de dados depois de uns segundos sem mudanças
 document.getElementById('current_ap').onchange = debounce( event => char.update('ap', event.target.value) );
 document.getElementById('current_lp').onchange = debounce( event => char.update('lp', event.target.value) );
 document.getElementById('current_hp').onchange = debounce( event => char.update('hp', event.target.value) );
@@ -102,7 +105,7 @@ function renderSpecialStats() {
 }
 
 function renderSkills() {
-  //TODO Tem que trazer o atributo default do banco de dados e setar a classe aqui...
+  // TODO Teria que trazer o atributo default do banco de dados pra não depender só do HTML
   for (const camel of Object.keys(char.skills)) {
     //  No objeto, as chaves tão em camelCase, mas precisa em snake_case pra acessar o HTML
     const snake = camelToSnake(camel);

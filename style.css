@@ -1,5 +1,6 @@
 body {
     background: #325886;
+    font-size: 1em;
 }
 
 main {
@@ -262,4 +263,24 @@ h1 {
     font-family: Monofont, monospace;
     font-size: 1.2em;
     color: #325886;
+}
+
+@media screen and (max-width: 1200px) {
+    .special_header {
+      font-size: 2em;
+    }
+
+    .special_stat {
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 1855px) {
+    .text_field {
+        font-size: 1em;
+    }
+
+    .input_label {
+        font-size: 1em;
+    }
 }
