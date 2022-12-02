@@ -41,19 +41,20 @@
 
 <main class="container-fluid">
 
-  <div class="row g-3 my-1">
-    <div class="col-2">
-      <div class="text_field py-1" id="origin_field">Brotherhood Initiate</div>
+  <div class="row g-2 g-sm-3 my-1">
+    <div class="col-4 col-sm-2">
+      <div class="text_field py-0 py-sm-1" id="origin_field">Brotherhood Initiate</div>
     </div>
-    <div class="col-1">
-      <div class="text_field py-1" id="current_level">Level 0</div>
+    <div class="col-2 col-sm-1">
+      <div class="text_field py-0 py-sm-1" id="current_level">Level 0</div>
     </div>
 
-    <div class="col-5">
+    <div class="col-6 col-sm-5">
       <div class="section">
-        <div class="row justify-content-center py-1">
-          <label class="col-2 input_label" for="current_xp">Experience</label>
-          <div class="col-2">
+        <div class="row justify-content-evenly justify-content-sm-center py-sm-1">
+          <label class="col-1 input_label d-sm-none" for="current_xp">XP</label>
+          <label class="col-2 input_label d-none d-sm-inline" for="current_xp">Experience</label>
+          <div class="col-3">
             <!-- TODO Melhorar isso com jQuery / JS -->
             <input class="number_input" type="numeric" name="current_xp" id="current_xp" min="0" step="1">
           </div>
@@ -64,10 +65,11 @@
       </div>
     </div>
 
-    <div class="col-2">
+    <div class="col-6 col-sm-2">
       <div class="section">
         <div class="row justify-content-center py-1">
-          <label class="col-5 input_label" for="current_ap">Action Points</label>
+          <label class="col-2 input_label d-sm-none" for="current_ap">AP</label>
+          <label class="col-6 col-sm-5 input_label d-none d-sm-inline" for="current_ap">Action Points</label>
           <div class="col-2">
             <input class="number_input digit_input" type="number" name="current_ap" id="current_ap" min="0" step="1"
                    max="6">
@@ -78,10 +80,11 @@
       </div>
     </div>
 
-    <div class="col-2">
+    <div class="col-6 col-sm-2">
       <div class="section">
         <div class="row justify-content-center py-1">
-          <label class="col-4 input_label" for="current_lp">Luck Points</label>
+          <label class="col-2 input_label d-sm-none" for="current_lp">LP</label>
+          <label class="col-6 col-sm-4 input_label d-none d-sm-inline" for="current_lp">Luck Points</label>
           <div class="col-2">
             <input class="number_input digit_input" type="number" name="current_lp" id="current_lp" min="0" step="1"
                    max="6">
@@ -93,7 +96,7 @@
     </div>
   </div>
 
-  <div class="row g-3 my-1">
+  <div class="row g-2 g-sm-3 my-1">
 
     <div class="col-lg-3">
       <!-- Atributos Principais -->
@@ -119,7 +122,7 @@
       </div>
 
       <!-- Atributos Secundários -->
-      <div class="col-12 my-1">
+      <div class="col-12 mt-2">
 
         <div class="section">
           <div class="row justify-content-center py-1">
@@ -154,7 +157,7 @@
         <!-- Imagem do personagem -->
         <div class="row">
           <div>
-            <img class="bg-transparent rounded mx-auto d-block" src="res/Hack_the_Mojave.webp"
+            <img class="bg-transparent rounded mx-auto d-none d-lg-block" src="res/Hack_the_Mojave.webp"
                  alt="Imagem do Personagem">
           </div>
         </div>
@@ -162,7 +165,7 @@
 
     </div>
 
-    <div class="col-5">
+    <div class="col-12 col-sm-5">
       <!-- Tabela de Skills -->
       <table class="table_region" id="skills_table">
         <tr class="table_header">
@@ -582,9 +585,9 @@
       </table>
     </div>
 
-    <div class="col-4">
+    <div class="col-12 col-sm-4">
       <!-- Estado dos Membros -->
-      <div class="row g-3 mx-auto">
+      <div class="row g-2 g-sm-3 mx-auto">
         <div class="section bg-image" id="body_stats">
           <div class="row my-3">
             <div class="container px-0 limb_table">
@@ -739,10 +742,10 @@
     </div>
   </div>
 
-  <div class="row g-3 my-1">
+  <div class="row g-3 my-0 my-sm-1">
 
     <!-- Tabela de armas -->
-    <div class="col">
+    <div class="col-12 col-sm my-0">
       <div class="section">
         <table class="table_region" id="weapon_list">
           <thead>

@@ -275,12 +275,12 @@ h1 {
     }
 }
 
-@media screen and (max-width: 1855px) {
-    .text_field {
-        font-size: 1em;
+@media screen and (max-width: 575px) {
+    .text-field {
+      font-size: 1.1em;
     }
 
-    .input_label {
-        font-size: 1em;
+    #weapon_list, #apparel_list {
+      font-size: 0.66em;
     }
 }
